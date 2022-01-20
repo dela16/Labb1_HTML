@@ -1,0 +1,31 @@
+.body {
+  width: 100%;
+}
+
+.container h1 {
+  text-align: center;
+  background-color: grey;
+  margin-bottom: 0;
+}
+
+.topnav {
+  text-align: center;
+  background-color: #d3b88c;
+}
+.topnav a {
+  font-size: 1em;
+  padding: 10%;
+  color: black;
+}
+
+.container img {
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.infoText {
+  padding: 20px;
+  font-size: 1em;
+}
