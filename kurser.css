@@ -1,0 +1,22 @@
+.body {
+  width: 100%;
+}
+
+.container h1 {
+  text-align: center;
+  background-color: #cbe4d9;
+  margin-bottom: 0;
+}
+
+.topnav {
+  text-align: center;
+  background-color: #d3b88c;
+  height: 30px;
+}
+.topnav a {
+  font-size: 1em;
+  padding: 10%;
+  color: black;
+  text-decoration-line: none;
+}
+
