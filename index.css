@@ -1,4 +1,4 @@
-.body {
+body {
   width: 100%;
   margin: 0;
 }
@@ -28,6 +28,7 @@
 
 .topnav a:hover {
   background-color: #8ad4d4;
+  cursor: pointer;
 }
 
 .video {
@@ -49,13 +50,12 @@
 #computer {
   padding: 2em;
   width: 50%;
-  height: 50%; 
+  height: 50%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   border-radius: 50%;
 }
-
 
 .footer {
   width: 100%;

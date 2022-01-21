@@ -1,23 +1,42 @@
-.body {
+body {
   width: 100%;
+  margin: 0;
+}
+
+.container {
+  /*Varför är det en vit ram runt vissa delar men inte alla? Vad är skillnaden mot vad jag gjort innan? width: 100% funkar inte*/
+  background-color: #01161e;
+  font-family: sans-serif;
+  padding: 0;
 }
 
 .container h1 {
+  color: white;
   text-align: center;
-  background-color: #cbe4d9;
-  margin-bottom: 0;
+  left: 40%;
+  margin-top: 0;
+  transform: translateY(40%);
 }
 
 .topnav {
   text-align: center;
-  background-color: #d3b88c;
-  height: 30px;
+  background-color: #cbe4d9;
+  height: 2em;
+  padding-top: 1em;
 }
 .topnav a {
   font-size: 1em;
-  padding: 10%;
+  font-weight: bold;
+  margin: 10%; /*Har du paddingen här så blir hela länken jättestor*/
   color: black;
   text-decoration-line: none;
+  border-radius: 10%;
+  padding: 1em;
+}
+
+.topnav a:hover {
+  background-color: #8ad4d4;
+  cursor: pointer;
 }
 
 #cabin {
@@ -25,4 +44,47 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
+}
+
+.courses {
+  background-color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3%;
+}
+
+.courses button {
+  margin-left: 20%;
+  border-radius: 10px;
+}
+
+.courses ul ul {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  position: static;
+}
+
+.courses ul ul li {
+  margin-left: 20%;
+  padding: 1em;
+  background: lightgrey;
+  width: 50%;
+  border-radius: 12px;
+  list-style: none;
+}
+
+.courses button:focus + ul ul {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.footer {
+  width: 100%;
+  background-color: #467579;
+  height: 2em;
+  text-align: center;
+  position: absolute;
+  padding-top: 15px;
 }
