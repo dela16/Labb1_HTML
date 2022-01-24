@@ -10,6 +10,12 @@ body {
   padding: 0;
 }
 
+.flex-nav {
+  display: flexbox;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .topnav {
   text-align: center;
   background-color: #cbe4d9;
@@ -19,7 +25,6 @@ body {
 .topnav a {
   font-size: 1em;
   font-weight: bold;
-  margin: 10%; /*Har du paddingen här så blir hela länken jättestor*/
   color: black;
   text-decoration-line: none;
   border-radius: 10%;
@@ -45,6 +50,10 @@ body {
   width: 50%;
   margin-left: 25%;
   background-color: white;
+}
+
+.infoText h1 {
+  text-align: center;
 }
 
 #computer {
