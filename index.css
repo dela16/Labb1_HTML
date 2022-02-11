@@ -11,27 +11,21 @@ body {
 }
 
 .topnav {
-  text-align: center;
+  width: 100%;
   background-color: #cbe4d9;
-  height: 50px;
-  padding-top: 1em;
-}
-
-.topnav ul {
+  font-size: 1em;
+  padding: 1em;
   text-decoration: none;
-  list-style: none;
 }
 
-.topnav ul li {
-  display: inline-block;
-}
-
-.topnav ul li a {
+.topnav a {
+  font-size: 1em;
   font-weight: bold;
   color: black;
-  text-decoration-line: none;
-  border-radius: 10%;
+  border-radius: 3%;
   padding: 1rem;
+  margin-right: 1rem;
+  text-decoration: none;
 }
 
 .topnav a:hover {
@@ -79,13 +73,77 @@ body {
 }
 
 @media (min-width: 375px) and (max-width: 562px) {
+  .container {
+    width: 100%;
+  }
+
+  .video {
+    display: none;
+  }
+  .topnav {
+    width: auto;
+    height: 0;
+    font-weight: bold;
+    padding: 2rem;
+  }
+
+  #myLinks a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: 17px;
+    padding: 1rem;
+    display: block;
+    background-color: black;
+  }
+
+  .topnav a {
+    text-decoration: none;
+    font-size: large;
+    color: black;
+  }
+
+  .topnav a.icon {
+    background-color: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    transition: 0.5s;
+  }
+
+  .topnav a:active {
+    background-color: #01161e;
+    color: white;
+  }
+  .infoText {
+    width: 70%;
+    margin-left: 10%;
+  }
 }
 
 @media (max-width: 768px) {
+  #myLinks {
+    text-align: center;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 998) {
+  #myLinks {
+    text-align: center;
+  }
 }
 
 @media (min-width: 999) {
+  #myLinks {
+    text-align: center;
+  }
 }

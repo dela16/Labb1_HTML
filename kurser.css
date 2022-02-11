@@ -15,24 +15,20 @@ body {
   background-color: #cbe4d9;
   font-size: 1em;
   padding: 1em;
-  text-align: center;
+  text-decoration: none;
 }
 
-.topnav ul li {
-  display: inline-block;
-}
-
-.topnav ul li a {
+.topnav a {
   font-size: 1em;
   font-weight: bold;
   color: black;
-  text-decoration-line: none;
   border-radius: 3%;
   padding: 1rem;
   margin-right: 1rem;
+  text-decoration: none;
 }
 
-.topnav ul li a:hover {
+.topnav a:hover {
   background-color: #8ad4d4;
   cursor: pointer;
 }
@@ -158,38 +154,40 @@ body {
   }
 
   .topnav {
-    width: 100%;
+    width: auto;
     height: 0;
     font-weight: bold;
+    padding: 2rem;
+    /* display: inline-block; Denna gör så att saker åker ner, men blir fult och du har ingen ork atm.*/
   }
 
-  .active {
-    text-transform: uppercase;
+  #myLinks a {
     text-decoration: none;
-    float: left;
-    color: black;
-  }
-
-  .topnav #myLinks {
-    display: none;
-    text-decoration: none;
-    color: black;
+    color: white;
+    position: relative;
+    text-align: left;
+    font-size: 1rem;
+    padding: 1rem;
+    display: block;
+    background-color: black;
   }
 
   .topnav a {
-    color: red;
-    padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
-    display: block;
+    font-size: large;
+    color: black;
   }
 
   .topnav a.icon {
-    background: black;
+    background-color: black;
     display: block;
     position: absolute;
     right: 0;
     top: 0;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
   }
 
   .topnav a:hover {
@@ -201,55 +199,8 @@ body {
     color: white;
   }
 
-  /* .menu-burger {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    border: 3px solid #fff;
-  }
-
-  .menu-burger-btn {
-    width: 50px;
-    height: 6px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .menu-burger-btn::before,
-  .menu-burger-btn::after {
-    content: " ";
-    position: absolute;
-    width: 50px;
-    height: 6px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .menu-burger-btn::before {
-    transform: translateY(-16px);
-  }
-
-  .menu-burger-btn::after {
-    transform: translateY(16px);
-  }
-
-  .menu-burger.open .menu-burger-btn {
-    transform: translateX(-50px);
-    background-color: transparent;
-    box-shadow: none;
-  } */
-
   .rubrik {
-    width: 100%;
+    width: auto;
     margin: 0;
     padding: 1rem;
   }
@@ -269,10 +220,19 @@ body {
 }
 
 @media (max-width: 768px) {
+  #myLinks {
+    text-align: center;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 998) {
+  #myLinks {
+    text-align: center;
+  }
 }
 
 @media (min-width: 999) {
+  #myLinks {
+    text-align: center;
+  }
 }
