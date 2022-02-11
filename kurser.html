@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="kurser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>WestCoast - Courses</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="flex-nav">
                 <div class="topnav">
-                    <a href="index.html">Startsida</a>
-                    <a href="kurser.html">Kurser</a>
-                    <a href="#">Eleverna berättar</a>
-                    <a href="#">Rektorn har ordet</a>
-                    <a href="#">Galleri</a>
-                    <a href="#">Logga in</a>
+                    <a href="index.html" class="active">WestCoast Education</a>
+                    <div id="myLinks">
+                        <a href="kurser.html">Kurser</a>
+                        <a href="#">Rektorn har ordet</a>
+                        <a href="#">Galleri</a>
+                        <a href="#">Logga in/ Kundvagn</a>
+                    </div>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
                 </div>
-            </div>
             <img id="cabin" src="red-g59a8ffb41_1920.jpg" />
         </header>
         <div class="rubrik">
@@ -40,30 +43,56 @@
                 <img src="imagesvideos/pexels-markus-spiske-2004161.jpg"> 
                 Start: HT-22. 
                 <br>
-                60HP. </div>
+                60HP. 
+            </div>
             <div class="grid-item" id="AI">AI - <br> Prata med robotar. 
                 <img src="imagesvideos/pexels-alex-knight-2599244.jpg">
                 Start: HT-22. 
                 <br>
-                15HP. </div>
+                15HP. 
+            </div>
             <div class="grid-item" id="Cloud">Cloud - <br> Mer än fluffiga moln. 
                 <img src="imagesvideos/pexels-brett-sayles-2100921.jpg">
                 Start: VT-23. 
                 <br>
-                30HP. </div>
+                30HP. 
+            </div>
             <div class="grid-item" id="OfficePaketet">Office 365, grundkurs. 
                 <img src="imagesvideos/pexels-photo-574069.jpeg">
                 Start: VT-23,
                 <br>
-                 7HP </div>
+                 7HP 
+                </div>
             <div class="grid-item" id="Paint">Paint - <br> Din bästa vän. 
                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
                 Start: HT-22. 
                 <br>
-                7HP </div>
+                7HP 
+            </div>
+            <div class="grid-item" id="OfficePaketet">Office 365, Advanced.
+                <img src="imagesvideos/pexels-photo-574069.jpeg">
+                Start: VT-23,
+                <br>
+                15HP
+            </div>
+            <div class="grid-item" id="Paint">Paint - <br> Din bästa vän, Advanced.
+                <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
+                Start: HT-22.
+                <br>
+                15HP
+            </div>
         </div>
         <div class="footer">All rights reserved West Coast Education.</div>
     </div>
-    
+<script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
