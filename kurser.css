@@ -139,6 +139,21 @@ body {
   border-radius: 5px;
 }
 
+.buy {
+  font-size: 0.7rem;
+  float: right;
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+
+.buy:hover {
+  color: white;
+  background-color: #01161e;
+  padding: 0.2rem;
+  border-radius: 5%;
+}
+
 .footer {
   width: 100%;
   background-color: #467579;
