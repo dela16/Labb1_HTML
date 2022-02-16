@@ -17,7 +17,6 @@ function buyPaintFunction() {
     //     document.getElementById("coursesInCart").innerHTML += cartitem; 
     // }
     // const courseList = JSON.stringify(chosenCourses);
-    alert("Course has been added to cart.");
 }
 
 
@@ -49,20 +48,26 @@ function buyPaintFunction() {
 //Något sådant!
 
 
-//Skapa en array med kurser
-const jsonCourses = `[{"Kursnummer": "101","Kurstitel": "Vad är internet?", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
- {"Kursnummer": "102","Kurstitel": "C#, Java, C++ och mycket mer", "Kursbeskrivning": "lorem ipsum", "Längd": "40 veckor."},
- {"Kursnummer": "103","Kurstitel": "AI - Prata med robotar.", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
- {"Kursnummer": "104","Kurstitel": "Cloud - Mer än fluffiga moln.", "Kursbeskrivning": "lorem ipsum", "Längd": "25 vekor." },
- {"Kursnummer": "105","Kurstitel": "Office 365, grundkurs.", "Kursbeskrivning":"lorem ipsum", "Längd": "5 veckor."},
- {"Kursnummer": "106","Kurstitel": "Paint - Din bästa vän.", "Kursbeskrivning": "lorem ipsum", "Längd": "5 veckor."},
-  {"Kursnummer": "107","Kurstitel": "Office 365, Advanced.", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
-   {"Kursnummer": "108","Kurstitel": "Paint - Din bästa vän, Advanced", "Kursbeskrivning": "lorem ipsum" , "Längd": "10 veckor."}]`;
-
-const jsonExistingCourses = JSON.parse(jsonCourses);
-
 for (let i = 0; i < jsonExistingCourses.length; i++){
-    const course = jsonExistingCourses[i];
+    let course = jsonExistingCourses[i];
     let courseListItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
     document.getElementById("courseList").innerHTML += courseListItem; 
 }; 
+
+let newCourse = []; 
+
+const addCourse = (ev) => {
+    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
+    let course = {
+        Kursnummer: document.getElementById('courseNumber').value, 
+        Kurstitel: document.getElementById('courseTitle').value,
+        Kursbeskrivning: document.getElementById('courseDescription').value,
+        Kurslängd: document.getElementById('courseLength').value
+    }
+    newCourse.push(course);
+    document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save. 
+}
+
+function Savebtn() {
+    courseList.push(); 
+}

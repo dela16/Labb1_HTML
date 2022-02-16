@@ -42,27 +42,24 @@
                     <div id="adminModal" class="mainModal">
                         <div class="modal-content">
                             <form action="/" method="post">
-                                <div class="modal">
+                                <div class="modal" id="courseNumber">
                                     <h1>Kursnummer</h1>
                                     <input type="number">
                                 </div>
-                                <div class="modal">
+                                <div class="modal" id="courseTitle">
                                     <h1>Kurstitel</h1>
                                     <input type="text">
                                 </div>
-                                <div class="modal">
+                                <div class="modal" id="courseDescription">
                                     <h1>Kursbeskrivning</h1>
                                     <input type="text">
                                 </div>
-                                <div class="modal">
+                                <div class="modal" id="courseLength">
                                     <h1>Kursens längd</h1>
-                                    <h2>Start</h2>
-                                    <input type="date">
-                                    <h2>Slut</h2>
-                                    <input type="date">
+                                    <input type="text">
                                 </div>
                                 <div class="modal">
-                                    <button type="submit" onClick="Savebtn">Save</button>
+                                    <button id="saveBtn" type="submit" onClick="Savebtn()">Save</button>
                                 </div>
                             </form>
                         </div>

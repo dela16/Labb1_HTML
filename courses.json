@@ -1,0 +1,12 @@
+
+Skapa en array med kurser. Från JSON till JS. Hitta JSON filen. Eller ska jag göra detta med fetch? 
+let jsonCourses = `[{"Kursnummer": "101","Kurstitel": "Vad är internet?", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
+ {"Kursnummer": "102","Kurstitel": "C#, Java, C++ och mycket mer", "Kursbeskrivning": "lorem ipsum", "Längd": "40 veckor."},
+ {"Kursnummer": "103","Kurstitel": "AI - Prata med robotar.", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
+ {"Kursnummer": "104","Kurstitel": "Cloud - Mer än fluffiga moln.", "Kursbeskrivning": "lorem ipsum", "Längd": "25 vekor." },
+ {"Kursnummer": "105","Kurstitel": "Office 365, grundkurs.", "Kursbeskrivning":"lorem ipsum", "Längd": "5 veckor."},
+ {"Kursnummer": "106","Kurstitel": "Paint - Din bästa vän.", "Kursbeskrivning": "lorem ipsum", "Längd": "5 veckor."},
+  {"Kursnummer": "107","Kurstitel": "Office 365, Advanced.", "Kursbeskrivning": "lorem ipsum", "Längd": "10 veckor."},
+   {"Kursnummer": "108","Kurstitel": "Paint - Din bästa vän, Advanced", "Kursbeskrivning": "lorem ipsum" , "Längd": "10 veckor."}]`;
+
+let jsonExistingCourses = JSON.parse(jsonCourses);
