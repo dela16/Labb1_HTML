@@ -11,7 +11,7 @@ body {
 }
 
 .topnav {
-  width: 100%;
+  width: auto;
   background-color: #cbe4d9;
   font-size: 1em;
   padding: 1em;
@@ -32,6 +32,8 @@ body {
   background-color: #8ad4d4;
   cursor: pointer;
 }
+
+
 
 #cabin {
   width: 50%;
@@ -144,7 +146,6 @@ body {
   float: right;
   cursor: pointer;
   text-decoration: underline;
-
 }
 
 .buy:hover {
@@ -152,6 +153,92 @@ body {
   background-color: #01161e;
   padding: 0.2rem;
   border-radius: 5%;
+}
+
+.alert {
+  background-color: #158467;
+  padding: 1rem;
+  position: fixed;
+  width: 25%;
+  right: 0;
+  top: 1rem;
+  border-radius: 4%;
+  border-left: 8px solid #197163;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.alert.showAlert {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.alert.show {
+  animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.alert.hide {
+  animation: hide_slide 1s ease forwards;
+}
+
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.alert .fas {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #baffb4;
+  font-size: 2rem;
+}
+
+.alert .close-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #baffb4;
+  background-color: #197163;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.alert .close-btn:hover {
+  background-color: #0f0e0e;
+}
+
+.close-btn .fa {
+  font-size: 1.5rem;
+  line-height: 40px;
 }
 
 .footer {
@@ -235,19 +322,19 @@ body {
 }
 
 @media (max-width: 768px) {
-  #myLinks {
+  #myLinks a{
     text-align: center;
   }
 }
 
 @media (min-width: 769px) and (max-width: 998) {
-  #myLinks {
+  #myLinks a{
     text-align: center;
   }
 }
 
 @media (min-width: 999) {
-  #myLinks {
+  #myLinks a{
     text-align: center;
   }
 }

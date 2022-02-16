@@ -7,6 +7,21 @@ function myBurgerMenu() {
     }
 }
 
+const chosenCourses = []; 
+
+function buyPaintFunction() {
+    // chosenCourses.push()//Behöver jag en const för de olika kurserna? jag behöver sätta något i min push.
+    // for (let i = 0; i < coursesInCart.length; i ++){
+    //     const cartitem = courseList[i];
+    //     let cartitem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
+    //     document.getElementById("coursesInCart").innerHTML += cartitem; 
+    // }
+    // const courseList = JSON.stringify(chosenCourses);
+    alert("Course has been added to cart.");
+}
+
+
+
 //switch-sats case= onclick === onclicknamnet {
     //stringify array. till jsonLista.
 //}

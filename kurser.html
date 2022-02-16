@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="kurser.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>WestCoast - Courses</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/dd0c43a00c.js" crossorigin="anonymous"></script>    <title>WestCoast - Courses</title>
 </head>
 <body>
     <div class="container">
@@ -26,7 +27,7 @@
         </header>
         <div class="rubrik">
             <p>
-            Valbara kurser. 
+            Valbara kurser.
             <br>
             Nedan ser du de kurser som går att läsa på vår skola. 
             <br>
@@ -91,7 +92,7 @@
                 <br>
                 1.475SEK.
                 <br>
-                <span class="buy" onClick="buyPaint">Köp</span>
+                <span class="buy" onClick="buyPaintFunction()">Köp</span>
             </div>
             <div class="grid-item" id="OfficePaketet">Office 365, Advanced.
                 <img src="imagesvideos/pexels-photo-574069.jpeg">
@@ -101,7 +102,7 @@
                 <br>
                 12.368SEK.
                 <br>
-                <span class="buy" onClick="buyPaintAdvanced">Köp</span>
+                <span class="buy" >Köp</span>
             </div>
             <div class="grid-item" id="Paint">Paint - <br> Din bästa vän, Advanced.
                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
@@ -111,11 +112,33 @@
                 <br>
                 10.205SEK.
                 <br>
-                <span class="buy">Köp</span>
+                <span class="buy" onClick="buyPaintAdvanced()">Köp</span>
+                <div class="alert hide">
+                <span class="fas fa-check-circle"></span>
+                    <span class="msg"> Course has been added to cart. </span>
+                    <div class="close-btn">
+                        <span class="fa fa-close"></span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">All rights reserved West Coast Education.</div>
     </div>
+    <script>
+        $('.buy').click(function(){
+             $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function(){
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            },5000); 
+        });
+         $('.close-btn').click(function(){
+              $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+    </script>
 <script src="events.js"></script>
 </body>
 </html>
