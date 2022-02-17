@@ -39,33 +39,36 @@
                     </p>
                     <ul id="courseList"></ul>
                 </div>
-                    <div id="adminModal" class="mainModal">
-                        <div class="modal-content">
-                            <form action="/" method="post">
-                                <div class="modal" id="courseNumber">
+                <button id="courseBtn" class="newCourseBtn">Add new course</button>
+
+                    <div id="adminModalContainer" class="admin_Modal_Container">
+                        <div class="modal">
+                            <form action="/admin.html" method="get">
+                                <div id="courseNumber">
                                     <h1>Kursnummer</h1>
                                     <input type="number">
                                 </div>
-                                <div class="modal" id="courseTitle">
+                                <div id="courseTitle">
                                     <h1>Kurstitel</h1>
                                     <input type="text">
                                 </div>
-                                <div class="modal" id="courseDescription">
+                                <div id="courseDescription">
                                     <h1>Kursbeskrivning</h1>
                                     <input type="text">
                                 </div>
-                                <div class="modal" id="courseLength">
+                                <div id="courseLength">
                                     <h1>Kursens längd</h1>
-                                    <input type="text">
+                                    <input type="number">
                                 </div>
-                                <div class="modal">
-                                    <button id="saveBtn" type="submit" onClick="Savebtn()">Save</button>
-                                </div>
+
+                                <button id="saveBtn" class="save_Btn" >Save</button>
                             </form>
                         </div>
                 </div>
         </div>
             <div class="footer">All rights reserved West Coast Education.</div>
-            <script src="events.js"></script>
+            <script src="scripts/admin.js"></script>
+            <!-- <script src="scripts/events.js"></script> -->
+    </div>
 </body>
 </html>

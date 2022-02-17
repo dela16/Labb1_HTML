@@ -10,13 +10,27 @@ function myBurgerMenu() {
 const chosenCourses = []; 
 
 function buyPaintFunction() {
-    // chosenCourses.push()//Behöver jag en const för de olika kurserna? jag behöver sätta något i min push.
-    // for (let i = 0; i < coursesInCart.length; i ++){
-    //     const cartitem = courseList[i];
-    //     let cartitem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
-    //     document.getElementById("coursesInCart").innerHTML += cartitem; 
-    // }
-    // const courseList = JSON.stringify(chosenCourses);
+    chosenCourses.push(cartItem)//Behöver jag en const för de olika kurserna? jag behöver sätta något i min push.
+    for (let i = 0; i < coursesInCart.length; i ++){
+        const cartitem = courseList[i];
+        let cartItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
+        document.getElementById("coursesInCart").innerHTML += cartitem; 
+    }
+    const courseList = JSON.stringify(chosenCourses);
+
+    // $('.buy').click(function(){                  I min värld ska ju detta ske först när kursen är tillagd i kundvagnen. Däför hamnar den här nere. 
+    //          $('.alert').addClass("show");
+    //         $('.alert').removeClass("hide");
+    //         $('.alert').addClass("showAlert");
+    //         setTimeout(function(){
+    //             $('.alert').removeClass("show");
+    //             $('.alert').addClass("hide");
+    //         },5000); 
+    //     });
+    //      $('.close-btn').click(function(){
+    //           $('.alert').removeClass("show");
+    //             $('.alert').addClass("hide");
+    //         });
 }
 
 
@@ -36,6 +50,22 @@ function buyPaintFunction() {
 
 
 
+
+const openBtn = document.getElementById("openBtn");
+const modalContainer = document.getElementById("modalContainer");
+const closeBtn = document.getElementById("closeBtn");
+
+openBtn.addEventListener("click", () => {
+    modalContainer.classList.add("show");
+});
+
+closeBtn.addEventListener("click", () => {
+    modalContainer.classList.remove("show");
+});
+
+
+
+
 //Ett verktyg för administratören att läga till kurser i kurslistan.
 //En modal som poppar upp där de fyller i info.
 //Kursnummer, kurstitel, kursbeskrivning, kursens längd.
@@ -46,6 +76,21 @@ function buyPaintFunction() {
     //res.send("Course added")
 //})
 //Något sådant!
+
+// const courseBtn = document.getElementById("courseBtn"); //const variabelnamn = ID.
+// const adminModalContainer = document.getElementById("adminModalContainer");
+// const saveBtn = document.getElementById("saveBtn");
+
+// courseBtn.addEventListener("click", () => {
+// //    adminModalContainer.classList.add("show");
+// });
+
+// saveBtn.addEventListener("click", () => {
+//     adminModalContainer.classList.remove("show");
+// });
+
+
+
 
 
 for (let i = 0; i < jsonExistingCourses.length; i++){

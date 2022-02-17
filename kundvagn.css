@@ -4,7 +4,6 @@ body {
 }
 
 .container {
-  /*Varför är det en vit ram runt vissa delar men inte alla? Vad är skillnaden mot vad jag gjort innan? width: 100% funkar inte*/
   background-color: #01161e;
   font-family: sans-serif;
   padding: 0;
@@ -43,6 +42,40 @@ body {
 
 .cart p {
   border: solid black 1px;
+  padding: 1rem;
+}
+
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; 
+}
+
+.modalContainer.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fff;
+  width: 50%;
+  border-radius: 3%;
+  padding: 1.5rem;
+}
+
+.buyBtn {
+  float: right;
+  width: 10%;
+  height: 2rem;
 }
 
 .footer {
@@ -50,7 +83,6 @@ body {
   background-color: #467579;
   height: 2em;
   text-align: center;
-  position: absolute;
   padding-top: 15px;
 }
 
