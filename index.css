@@ -76,25 +76,7 @@ body {
   pointer-events: none;
 }
 
-.admin {
-  display: none;
-}
-
-.kundvagn {
-  display: none;
-}
-
 .kurser.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.admin.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.kundvagn.show {
   pointer-events: auto;
   opacity: 1;
 }
@@ -328,8 +310,24 @@ body {
 /*Admin sida*/
 
 .admin {
-  width: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
 }
+
+.admin.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
 .infoText {
   padding: 20px;
   font-size: 1em;
@@ -397,6 +395,22 @@ body {
 /*Kundvagnssida*/
 
 .kundvagn {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.kundvagn.show {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .cart {

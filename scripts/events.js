@@ -40,9 +40,13 @@ const closeCoursesBtn = document.getElementById("closeCoursesBtn");
 
 const openAdminModal = document.getElementById("openAdminModal");
 const adminDiv = document.getElementById("admin");
+const closeAdminDiv = document.getElementById("closeAdminBtn");
 
-const openCartModal = document.getElementById("openCartModal");
+const openCartmodal = document.getElementById("openCartmodal");
 const kundvagnDiv = document.getElementById("kundvagn");
+const closeCartBtn = document.getElementById("closeCartBtn"); 
+
+
 
 openCourseModal.addEventListener("click", () => {
     kursDiv.classList.add("show"); //Knappen ska ju få kurs-diven att visas
@@ -52,12 +56,20 @@ closeCoursesBtn.addEventListener("click", () => {
     kursDiv.classList.remove("show"); //Knappen ska ju få kurs-diven att visas
 });
 
+
 openAdminModal.addEventListener("click", () => {
     adminDiv.classList.add("show");
 });
+closeAdminDiv.addEventListener("click", () => {
+    adminDiv.classList.remove("show");
+});
 
-openCartModal.addEventListener("click", () => {
+
+openCartmodal.addEventListener("click", () => {
     kundvagnDiv.classList.add("show");
+});
+closeCartBtn.addEventListener("click", () => {
+    kundvagnDiv.classList.remove("show");
 });
 
 
