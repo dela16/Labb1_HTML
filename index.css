@@ -4,14 +4,13 @@ body {
 }
 
 .container {
-  /*Varför är det en vit ram runt vissa delar men inte alla? Vad är skillnaden mot vad jag gjort innan? width: 100% funkar inte*/
   background-color: #01161e;
   font-family: sans-serif;
   padding: 0;
 }
 
 .topnav {
-  width: 100%;
+  width: auto;
   background-color: #cbe4d9;
   font-size: 1em;
   padding: 1em;
@@ -63,6 +62,410 @@ body {
   border-radius: 50%;
 }
 
+.kurser {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.admin {
+  display: none;
+}
+
+.kundvagn {
+  display: none;
+}
+
+.kurser.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.admin.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.kundvagn.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Kurssida */
+
+.kurs_Modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#cabin {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.rubrik {
+  background: #477a79;
+  margin-left: 25%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.courses {
+  display: grid;
+  font-size: 1em;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: #477a79;
+}
+
+.grid-item {
+  margin: 0.5em;
+  padding: 1em;
+  text-align: center;
+  width: auto;
+  border-radius: 5px;
+}
+
+#Internetkunskap {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#Internetkunskap img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#ProgSpråk {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#ProgSpråk img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#AI {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#AI img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#Cloud {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#Cloud img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#OfficePaketet {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#OfficePaketet img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#Paint {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#Paint img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.buy {
+  font-size: 0.7rem;
+  float: right;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.buy:hover {
+  color: white;
+  background-color: #01161e;
+  padding: 0.2rem;
+  border-radius: 5%;
+}
+
+.alert {
+  background-color: #158467;
+  padding: 1rem;
+  position: fixed;
+  width: 25%;
+  right: 0;
+  top: 1rem;
+  border-radius: 4%;
+  border-left: 8px solid #197163;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.alert.showAlert {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.alert.show {
+  animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.alert.hide {
+  animation: hide_slide 1s ease forwards;
+}
+
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.alert .fas {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #baffb4;
+  font-size: 2rem;
+}
+
+.alert .close-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #baffb4;
+  background-color: #197163;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.alert .close-btn:hover {
+  background-color: #0f0e0e;
+}
+
+.close-btn .fa {
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+/* .closeCoursesBtn{
+
+} */
+
+/*Slut på Kurssida*/
+
+/*Admin sida*/
+
+.admin {
+  width: auto;
+}
+.infoText {
+  padding: 20px;
+  font-size: 1em;
+  width: 50%;
+  margin-left: 25%;
+  background-color: white;
+}
+
+.admin_Modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.admin_Modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.admin_Modal_Container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.admin_Modal_Container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fff;
+  width: 30%;
+  border-radius: 3%;
+  padding: 1.5rem;
+}
+
+.existingCourses ul {
+  line-height: 1.5rem;
+}
+
+#saveBtn {
+  margin-top: 2rem;
+}
+/*Slut på admin sida.*/
+
+/*Kundvagnssida*/
+
+.kundvagn {
+}
+
+.cart {
+  background-color: white;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.cart p {
+  border: solid black 1px;
+  padding: 1rem;
+}
+
+.cart_Modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cart_Modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modalContainer.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fff;
+  width: 50%;
+  border-radius: 3%;
+  padding: 1.5rem;
+}
+
+.buyBtn {
+  float: right;
+  width: 10%;
+  height: 2rem;
+}
+
+/*Slut på Kundvagnssida*/
 .footer {
   width: 100%;
   background-color: #467579;
@@ -132,6 +535,25 @@ body {
   #computer {
     width: 80%;
     height: 80%;
+  }
+
+  .rubrik {
+    width: auto;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  #cabin {
+    display: none;
+  }
+
+  .courses {
+    width: 100%;
+    margin: 0;
+    display: grid;
+    font-size: 1em;
+    grid-template-columns: 50% 50%;
+    background-color: #477a79;
   }
 }
 

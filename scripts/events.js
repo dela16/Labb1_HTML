@@ -7,16 +7,16 @@ function myBurgerMenu() {
     }
 }
 
-const chosenCourses = []; 
+// const chosenCourses = []; 
 
-function buyPaintFunction() {
-    chosenCourses.push(cartItem)//Behöver jag en const för de olika kurserna? jag behöver sätta något i min push.
-    for (let i = 0; i < coursesInCart.length; i ++){
-        const cartitem = courseList[i];
-        let cartItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
-        document.getElementById("coursesInCart").innerHTML += cartitem; 
-    }
-    const courseList = JSON.stringify(chosenCourses);
+// function buyPaintFunction() {
+//     chosenCourses.push(cartItem)//Behöver jag en const för de olika kurserna? jag behöver sätta något i min push.
+//     for (let i = 0; i < coursesInCart.length; i ++){
+//         const cartitem = courseList[i];
+//         let cartItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
+//         document.getElementById("coursesInCart").innerHTML += cartitem; 
+//     }
+//     const courseList = JSON.stringify(chosenCourses);
 
     // $('.buy').click(function(){                  I min värld ska ju detta ske först när kursen är tillagd i kundvagnen. Däför hamnar den här nere. 
     //          $('.alert').addClass("show");
@@ -31,7 +31,36 @@ function buyPaintFunction() {
     //           $('.alert').removeClass("show");
     //             $('.alert').addClass("hide");
     //         });
-}
+//}
+
+/*Dessa ska öppna alla modalsidorna*/ 
+const openCourseModal = document.getElementById("openCourseModal");
+const kursDiv = document.getElementById("kurser");
+const closeCoursesBtn = document.getElementById("closeCoursesBtn");
+
+const openAdminModal = document.getElementById("openAdminModal");
+const adminDiv = document.getElementById("admin");
+
+const openCartModal = document.getElementById("openCartModal");
+const kundvagnDiv = document.getElementById("kundvagn");
+
+openCourseModal.addEventListener("click", () => {
+    kursDiv.classList.add("show"); //Knappen ska ju få kurs-diven att visas
+});
+
+closeCoursesBtn.addEventListener("click", () => {
+    kursDiv.classList.remove("show"); //Knappen ska ju få kurs-diven att visas
+});
+
+openAdminModal.addEventListener("click", () => {
+    adminDiv.classList.add("show");
+});
+
+openCartModal.addEventListener("click", () => {
+    kundvagnDiv.classList.add("show");
+});
+
+
 
 
 
@@ -50,7 +79,7 @@ function buyPaintFunction() {
 
 
 
-
+/*Detta är för kundvagnen?*/ 
 const openBtn = document.getElementById("openBtn");
 const modalContainer = document.getElementById("modalContainer");
 const closeBtn = document.getElementById("closeBtn");
@@ -77,17 +106,24 @@ closeBtn.addEventListener("click", () => {
 //})
 //Något sådant!
 
-// const courseBtn = document.getElementById("courseBtn"); //const variabelnamn = ID.
-// const adminModalContainer = document.getElementById("adminModalContainer");
-// const saveBtn = document.getElementById("saveBtn");
+//Denna vet vi funkar bara att den funkar inte när vi har den andra modalen. 
+const courseBtn = document.getElementById("courseBtn"); //const variabelnamn = ID.
+const adminModalContainer = document.getElementById("adminModalContainer");
+const saveBtn = document.getElementById("saveBtn");
 
-// courseBtn.addEventListener("click", () => {
-// //    adminModalContainer.classList.add("show");
-// });
+courseBtn.addEventListener("click", () => {
+   adminModalContainer.classList.add("show");
+});
 
-// saveBtn.addEventListener("click", () => {
-//     adminModalContainer.classList.remove("show");
-// });
+saveBtn.addEventListener("click", () => {
+    adminModalContainer.classList.remove("show");
+});
+
+
+
+
+
+
 
 
 
