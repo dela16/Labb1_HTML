@@ -34,9 +34,9 @@ function myBurgerMenu() {
 //}
 
 /*Dessa ska öppna alla modalsidorna*/ 
-const openCourseModal = document.getElementById("openCourseModal");
-const kursDiv = document.getElementById("kurser");
-const closeCoursesBtn = document.getElementById("closeCoursesBtn");
+// const openCourseModal = document.getElementById("openCourseModal");
+// const kursDiv = document.getElementById("kurser");
+// const closeCoursesBtn = document.getElementById("closeCoursesBtn");
 
 const openAdminModal = document.getElementById("openAdminModal");
 const adminDiv = document.getElementById("admin");
@@ -48,13 +48,13 @@ const closeCartBtn = document.getElementById("closeCartBtn");
 
 
 
-openCourseModal.addEventListener("click", () => {
-    kursDiv.classList.add("show"); //Knappen ska ju få kurs-diven att visas
-});
+// openCourseModal.addEventListener("click", () => {
+//     kursDiv.classList.add("show"); //Knappen ska ju få kurs-diven att visas
+// });
 
-closeCoursesBtn.addEventListener("click", () => {
-    kursDiv.classList.remove("show"); //Knappen ska ju få kurs-diven att visas
-});
+// closeCoursesBtn.addEventListener("click", () => {
+//     kursDiv.classList.remove("show"); //Knappen ska ju få kurs-diven att visas
+// });
 
 
 openAdminModal.addEventListener("click", () => {
@@ -141,26 +141,26 @@ saveBtn.addEventListener("click", () => {
 
 
 
-for (let i = 0; i < jsonExistingCourses.length; i++){
-    let course = jsonExistingCourses[i];
-    let courseListItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
-    document.getElementById("courseList").innerHTML += courseListItem; 
-}; 
+// for (let i = 0; i < jsonExistingCourses.length; i++){
+//     let course = jsonExistingCourses[i];
+//     let courseListItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
+//     document.getElementById("courseList").innerHTML += courseListItem; 
+// }; 
 
-let newCourse = []; 
+// let newCourse = []; 
 
-const addCourse = (ev) => {
-    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
-    let course = {
-        Kursnummer: document.getElementById('courseNumber').value, 
-        Kurstitel: document.getElementById('courseTitle').value,
-        Kursbeskrivning: document.getElementById('courseDescription').value,
-        Kurslängd: document.getElementById('courseLength').value
-    }
-    newCourse.push(course);
-    document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save. 
-}
+// const addCourse = (ev) => {
+//     ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
+//     let course = {
+//         Kursnummer: document.getElementById('courseNumber').value, 
+//         Kurstitel: document.getElementById('courseTitle').value,
+//         Kursbeskrivning: document.getElementById('courseDescription').value,
+//         Kurslängd: document.getElementById('courseLength').value
+//     }
+//     newCourse.push(course);
+//     document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save. 
+// }
 
-function Savebtn() {
-    courseList.push(); 
-}
+// function Savebtn() {
+//     courseList.push(); 
+// }
