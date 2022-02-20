@@ -18,25 +18,6 @@ function myBurgerMenu() {
 //     }
 //     const courseList = JSON.stringify(chosenCourses);
 
-    // $('.buy').click(function(){                  I min värld ska ju detta ske först när kursen är tillagd i kundvagnen. Däför hamnar den här nere. 
-    //          $('.alert').addClass("show");
-    //         $('.alert').removeClass("hide");
-    //         $('.alert').addClass("showAlert");
-    //         setTimeout(function(){
-    //             $('.alert').removeClass("show");
-    //             $('.alert').addClass("hide");
-    //         },5000); 
-    //     });
-    //      $('.close-btn').click(function(){
-    //           $('.alert').removeClass("show");
-    //             $('.alert').addClass("hide");
-    //         });
-//}
-
-/*Dessa ska öppna alla modalsidorna*/ 
-// const openCourseModal = document.getElementById("openCourseModal");
-// const kursDiv = document.getElementById("kurser");
-// const closeCoursesBtn = document.getElementById("closeCoursesBtn");
 
 const openAdminModal = document.getElementById("openAdminModal");
 const adminDiv = document.getElementById("admin");
@@ -46,15 +27,6 @@ const openCartmodal = document.getElementById("openCartmodal");
 const kundvagnDiv = document.getElementById("kundvagn");
 const closeCartBtn = document.getElementById("closeCartBtn"); 
 
-
-
-// openCourseModal.addEventListener("click", () => {
-//     kursDiv.classList.add("show"); //Knappen ska ju få kurs-diven att visas
-// });
-
-// closeCoursesBtn.addEventListener("click", () => {
-//     kursDiv.classList.remove("show"); //Knappen ska ju få kurs-diven att visas
-// });
 
 
 openAdminModal.addEventListener("click", () => {
@@ -71,9 +43,6 @@ openCartmodal.addEventListener("click", () => {
 closeCartBtn.addEventListener("click", () => {
     kundvagnDiv.classList.remove("show");
 });
-
-
-
 
 
 //switch-sats case= onclick === onclicknamnet {
@@ -106,61 +75,30 @@ closeBtn.addEventListener("click", () => {
 
 
 
-
 //Ett verktyg för administratören att läga till kurser i kurslistan.
-//En modal som poppar upp där de fyller i info.
-//Kursnummer, kurstitel, kursbeskrivning, kursens längd.
 //When savebtn.onClick += array.push();
-//Visas på presentationssidan. Göra som genomgången 3/2 med <ul>.
+//Visas på presentationssidan.
 
-//If Savebtn Clicked - app.post("/", function (req, res){
-    //res.send("Course added")
-//})
-//Något sådant!
+function SaveBtn() {
+   
+}
 
-//Denna vet vi funkar bara att den funkar inte när vi har den andra modalen. 
-const courseBtn = document.getElementById("courseBtn"); //const variabelnamn = ID.
+
+//Denna vet vi funkar, bara att den funkar inte när vi har den andra modalen. 
+const courseBtn = document.getElementById("courseBtn");
 const adminModalContainer = document.getElementById("adminModalContainer");
+const adminCourseModal = document.getElementById("adminCourseModal"); 
 const saveBtn = document.getElementById("saveBtn");
 
 courseBtn.addEventListener("click", () => {
-   adminModalContainer.classList.add("show");
+   adminModalContainer.classList.add("show");//Vill ju inte att hela kurslistan ska försvinna! Den gör väl det pga form hänvisningen. 
 });
 
 saveBtn.addEventListener("click", () => {
-    adminModalContainer.classList.remove("show");
+    adminCourseModal.classList.remove("show");
 });
 
 
 
 
 
-
-
-
-
-
-
-// for (let i = 0; i < jsonExistingCourses.length; i++){
-//     let course = jsonExistingCourses[i];
-//     let courseListItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`; 
-//     document.getElementById("courseList").innerHTML += courseListItem; 
-// }; 
-
-// let newCourse = []; 
-
-// const addCourse = (ev) => {
-//     ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
-//     let course = {
-//         Kursnummer: document.getElementById('courseNumber').value, 
-//         Kurstitel: document.getElementById('courseTitle').value,
-//         Kursbeskrivning: document.getElementById('courseDescription').value,
-//         Kurslängd: document.getElementById('courseLength').value
-//     }
-//     newCourse.push(course);
-//     document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save. 
-// }
-
-// function Savebtn() {
-//     courseList.push(); 
-// }
