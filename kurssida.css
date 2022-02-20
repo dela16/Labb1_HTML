@@ -272,6 +272,7 @@ body {
   transform: translateY(-50%);
   color: #baffb4;
   font-size: 2rem;
+  /* transform: translateY(50%); */
 }
 
 .alert .close-btn {
