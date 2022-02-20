@@ -110,7 +110,7 @@
                                 <br>
                                 12.368SEK.
                                 <br>
-                                <span class="buy">Köp</span>
+                                <span class="buy" onClick="buyOfficePaketet()">Köp</span>
                             </div>
                             <div class="grid-item" id="Paint">Paint - <br> Din bästa vän, Advanced.
                                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
@@ -172,10 +172,10 @@
                     <button id="closeAdminBtn" class="closeAdminBtn"> Close</button>
                     <div id="adminModalContainer" class="admin_Modal_Container">
                         <div class="adminCourseModal">
-                            <form action="/kurssida.html" method="get">
+                            <form>
                                 <div id="courseNumber">
                                     <h1>Kursnummer</h1>
-                                    <input type="number">
+                                    <input type="text">
                                 </div>
                                 <div id="courseTitle">
                                     <h1>Kurstitel</h1>
@@ -189,7 +189,7 @@
                                     <h1>Kursens längd</h1>
                                     <input type="text">
                                 </div>
-                                <button id="saveBtn" class="save_Btn" onclick="Savebtn()">Save</button>
+                                <button id="saveBtn" class="save_Btn" onclick="saveCourse()">Save</button>
                                 <button id="closeAdminBtn" class="closeAdminBtn"> Close</button>
                             </form>
                         </div>

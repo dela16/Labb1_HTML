@@ -40,24 +40,62 @@ const courses = `[{"Kursnummer": "1",
 
 const courseList = JSON.parse(courses);
 
-for (let i = 0; i < courseList.length; i++) {
-            const course = courseList[i];
-            let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-            document.getElementById("existingCourses").innerHTML += wceCourses;
-        };
+
+const saveBtn = document.getElementById("saveBtn");
+
+saveBtn.addEventListener("click", () => {
+
+   let cNumber = document.getElementById("courseNumber").value;
+   // console.log(cNumber);
+   let cTitel = document.getElementById('courseTitle').value;
+   let cDecription = document.getElementById('courseDescription').value;
+   let cLength = document.getElementById('courseLength').value;
+   
+   const kurs = `<li>Kursnummer: ${cNumber}, Kurstitel: ${cTitel}, Kursbeskrivning: ${cDecription}, Längd: ${cLength}</li>`;
+   // document.getElementById("existingCourses").innerHTML += kurs;
+   
+   courseList.push(kurs);
+});
 
 
 
-const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
-   ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
-   let newCourse = {
-      Kursnummer: document.getElementById('courseNumber').value,
-      Kurstitel: document.getElementById('courseTitle').value,
-      Kursbeskrivning: document.getElementById('courseDescription').value,
-      Kurslängd: document.getElementById('courseLength').value
-   }
+// document.getElementById(saveBtn).onClick = function() {
+//     const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
+//    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
+//    let newCourse = {
+//       Kursnummer: document.getElementById('courseNumber').value,
+//       Kurstitel: document.getElementById('courseTitle').value,
+//       Kursbeskrivning: document.getElementById('courseDescription').value,
+//       Kurslängd: document.getElementById('courseLength').value
+//    }
+//     courseList.push(newCourse);
 
-}
+//    }
+//    function saveCourse() {
+//    document.getElementById(existingCourses).innerHTML += courseList; 
+// }
+// }
+ 
+
+
+// const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
+//    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
+//    let newCourse = {
+//       Kursnummer: document.getElementById('courseNumber').value,
+//       Kurstitel: document.getElementById('courseTitle').value,
+//       Kursbeskrivning: document.getElementById('courseDescription').value,
+//       Kurslängd: document.getElementById('courseLength').value
+//    }
+   // addCourse.push(newCourse);
+
+//}
+
+// for (let i = 0; i < courseList.length; i++) {
+//             const course = courseList[i];
+//             let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
+//             document.getElementById("existingCourses").innerHTML += wceCourses += addCourse;
+// };
+        
 
 
    // if (Savebtn.addEventListener("click", () => {
@@ -81,19 +119,18 @@ const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
 // else {
 //    return; 
 // }   
-}
+//}
  
-
-
-
-
-
 
 
 
 
 // const cart = []; 
 
+// if (buyPaintAdvanced() === "click") {
+//    cart.push(Paint);
+   
+// }
 // switch (itemsInCart) {//Something like this... 
 //     case $('.buyInternet').click(function () {
 //         cart.push(`.buyInternet`);

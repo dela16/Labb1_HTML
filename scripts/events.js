@@ -28,10 +28,22 @@ const kundvagnDiv = document.getElementById("kundvagn");
 const closeCartBtn = document.getElementById("closeCartBtn"); 
 
 
-
 openAdminModal.addEventListener("click", () => {
+
+    document.getElementById("existingCourses").innerHTML = "";
+    
+   for (let i = 0; i < courseList.length; i++) {
+      const course = courseList[i];
+      let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
+      document.getElementById("existingCourses").innerHTML += wceCourses;
+    };
     adminDiv.classList.add("show");
+
 });
+
+// openAdminModal.addEventListener("click", () => {
+    
+// });
 closeAdminDiv.addEventListener("click", () => {
     adminDiv.classList.remove("show");
 });
@@ -88,15 +100,12 @@ function SaveBtn() {
 const courseBtn = document.getElementById("courseBtn");
 const adminModalContainer = document.getElementById("adminModalContainer");
 const adminCourseModal = document.getElementById("adminCourseModal"); 
-const saveBtn = document.getElementById("saveBtn");
+
 
 courseBtn.addEventListener("click", () => {
    adminModalContainer.classList.add("show");//Vill ju inte att hela kurslistan ska försvinna! Den gör väl det pga form hänvisningen. 
 });
 
-saveBtn.addEventListener("click", () => {
-    adminCourseModal.classList.remove("show");
-});
 
 
 
