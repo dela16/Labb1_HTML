@@ -57,13 +57,6 @@ saveBtn.addEventListener("click", () => {
    //  "Kurstitel": "${cTitel}", 
    //  "Kursbeskrivning": "${cDescription}" , 
    //  "Längd": "${cLength}"}` //Nu är kursen ett json objekt.
-   
-   // const kurs = {
-   //    Kursnummer: cNumber,
-   //    Kurstitel: cTitel,
-   //    Kursbeskrivning: cDescription,
-   //    Längd: cLength,
-   // };
     
    // const nyKurs = JSON.stringify(kurs);
 const kurs = new Object();
@@ -76,90 +69,35 @@ kurs.Längd = cLength;
    courseList.push(kurs);
    getCourses(); 
    adminModalContainer.classList.remove("show");
-   //Här kan du skriva in kod för att tömma rutorna. 
+   //Här kan du skriva in kod för att tömma rutorna. Göra det till en funktion? 
+   
 });
 
 
 
-// document.getElementById(saveBtn).onClick = function() {
-//     const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
-//    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
-//    let newCourse = {
-//       Kursnummer: document.getElementById('courseNumber').value,
-//       Kurstitel: document.getElementById('courseTitle').value,
-//       Kursbeskrivning: document.getElementById('courseDescription').value,
-//       Kurslängd: document.getElementById('courseLength').value
-//    }
-//     courseList.push(newCourse);
-
-//    }
-//    function saveCourse() {
-//    document.getElementById(existingCourses).innerHTML += courseList; 
-// }
-// }
- 
 
 
-// const addCourse = (ev) => {//Här tar vi in värden från admin formuläret
-//    ev.preventDefault();//Hindrar från att submittas, kanske ej behövs
-//    let newCourse = {
-//       Kursnummer: document.getElementById('courseNumber').value,
-//       Kurstitel: document.getElementById('courseTitle').value,
-//       Kursbeskrivning: document.getElementById('courseDescription').value,
-//       Kurslängd: document.getElementById('courseLength').value
-//    }
-   // addCourse.push(newCourse);
+ const cart = []; 
 
-//}
+if (buyCourseBtn.addEventListener("click", () => {
+   kurs.Kursnummer = "1";
+   kurs.Kurstitel = "BuyInternet";
+   kurs.Kursbeskrivning = "lorem Ipsum";
+   kurs.Längd = "10 veckor.";
+})); {
 
-// for (let i = 0; i < courseList.length; i++) {
-//             const course = courseList[i];
-//             let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-//             document.getElementById("existingCourses").innerHTML += wceCourses += addCourse;
-// };
-        
+    for (let i = 0; i < cart.length; i++) {
+            const cartItem = cart[i];
+            let courseItem = `<li>Kursnummer: ${cartItem.Kursnummer}, Kurstitel: ${cartItem.Kurstitel}, Kursbeskrivning: ${cartItem.Kursbeskrivning}, Längd: ${cartItem.Längd}</li>`;
+            document.getElementById("coursesInCart").innerHTML += courseItem;
+        };
 
+   cart.push("hej"); 
+ } 
 
-   // if (Savebtn.addEventListener("click", () => {
-   // function Savebtn() {
-   //    addCourse.push(newCourse);
-   //    //document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save.
-   //    //Jag vill inte att modalen ska stängas efter att jag klickat på spara. 
-   //    adminModalContainer.classList.add("show");
-   //    const adminsAddedCourses = JSON.stringify(addCourse);
+       //alternativt!
 
-   //    //Hur få den att synas på hemsidan? Göra en till ul? 
-   //    document.getElementById("existingCourses").innerHTML += adminsAddedCourses;
-   // }
-   // }));
-//    else if(closeAdminBtn.addEventListener("click", () => {
-//       function closeAdminbtn() {
-//       document.querySelector('form').reset();//Tömmer dokumentet när jag klickat på save. 
-//       adminModalContainer.classList.remove("show");
-//    }
-//    }));
-// else {
-//    return; 
-// }   
-//}
- 
+const buyCourseBtn = document.getElementById("buyBtn");//OBS! Deta ID finns inte i nuläget!
 
 
-
-
-// const cart = []; 
-
-// if (buyPaintAdvanced() === "click") {
-//    cart.push(Paint);
-   
-// }
-// switch (itemsInCart) {//Something like this... 
-//     case $('.buyInternet').click(function () {
-//         cart.push(`.buyInternet`);
-
-//         for (let i = 0; i < cart.length; i++) {
-//             const course = cart[i];
-//             let courseItem = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-//             document.getElementById("coursesInCart").innerHTML += courseItem;
-//         };
-//     };
+    
