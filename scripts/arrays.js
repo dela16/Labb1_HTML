@@ -70,7 +70,7 @@ const kurs = new Object();
 kurs.Kursnummer = cNumber;
 kurs.Kurstitel = cTitel;
 kurs.Kursbeskrivning = cDescription;
-kurs.Längd = cLenght;
+kurs.Längd = cLength;
 
 
    courseList.push(kurs);
