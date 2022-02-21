@@ -73,31 +73,102 @@ kurs.Längd = cLength;
    
 });
 
+//Lägg till kurs på kurssidan.
+
+function courseCard(courseArray = []) {
+   courseArray = courseList; 
+   const coursesInPresentation = document.getElementById("courses");
+   coursesInPresentation.innerHTML = ""; 
+
+   courseArray.forEach((course) => {
+      const title = document.createElement("h1");
+   const pic = document.createElement("img");
+   const desc = document.createElement("p");
+   const span = document.createElement("span");
+
+      title.classList.add("card");//Fråga vad dessa göra. Är det egen js kod för att skapa kort? 
+      pic.classList.add("card-image");
+      desc.classList.add("card-text");
+      span.classList.add("card-add-button");
+      
+      //pic.src = course.image; Denna make more sence när vi lägger till mer kod över. 
+      pic.alt = "card-image";
+      h1.innerText = course.title + `(${course.id})`;
+      p.innerText = course.desc; 
+      span.innerText = "Add Course"; 
+
+      
+         div.appendChild(h1);
+         div.appendChild(img);
+         div.appendChild(p);
+         div.appendChild(span);
 
 
 
+   });
 
- const cart = []; 
+}
 
-if (buyCourseBtn.addEventListener("click", () => {
-   kurs.Kursnummer = "1";
-   kurs.Kurstitel = "BuyInternet";
-   kurs.Kursbeskrivning = "lorem Ipsum";
-   kurs.Längd = "10 veckor.";
-})); {
+// const cart = []; 
 
-    for (let i = 0; i < cart.length; i++) {
-            const cartItem = cart[i];
-            let courseItem = `<li>Kursnummer: ${cartItem.Kursnummer}, Kurstitel: ${cartItem.Kurstitel}, Kursbeskrivning: ${cartItem.Kursbeskrivning}, Längd: ${cartItem.Längd}</li>`;
-            document.getElementById("coursesInCart").innerHTML += courseItem;
-        };
+// function 
+ 
+// const PaintAdvanced = document.getElementById("paint-Advanced");
 
-   cart.push("hej"); 
- } 
+// PaintAdvanced.addEventListener("click", () => {
+//    addToCart(); 
+// });
 
-       //alternativt!
+// function addToCart() {
+//    kurs.Kursnummer; 
+//    kurs.Kurstitel; 
 
-const buyCourseBtn = document.getElementById("buyBtn");//OBS! Deta ID finns inte i nuläget!
+//    coursesInCart.push(kurs);
+// }
+
+// function addToCart() {
+//    const item = document.getElementById(coursesInCart);
+
+//    //all elements to be added
+
+
+//    //push elements into HTML
+//    item.appendChild(ele);
+//    ele.appendChild(pic);
+//    ele.appendChild(price);
+//    ele.appendChild(desc);
+//    ele.appendChild(add);
+//    ele.appendChild(typeBox);
+
+//    //edit pushed elements info from array.
+//    pic.innerHTML = courses[i][0];
+//    price.innerHTML = "$" + courses[i][1];
+//    desc.innerHTML = courses[i][2];
+//    add.innerHTML = "add"; 
+//    typeBox.typ = "number"; 
+
+
+// }
+
+// if (buyCourseBtn.addEventListener("click", () => {
+//    kurs.Kursnummer = "1";
+//    kurs.Kurstitel = "BuyInternet";
+//    kurs.Kursbeskrivning = "lorem Ipsum";
+//    kurs.Längd = "10 veckor.";
+// })); {
+
+//     for (let i = 0; i < cart.length; i++) {
+//             const cartItem = cart[i];
+//             let courseItem = `<li>Kursnummer: ${cartItem.Kursnummer}, Kurstitel: ${cartItem.Kurstitel}, Kursbeskrivning: ${cartItem.Kursbeskrivning}, Längd: ${cartItem.Längd}</li>`;
+//             document.getElementById("coursesInCart").innerHTML += courseItem;
+//         };
+
+//    cart.push("hej"); 
+//  } 
+
+//        //alternativt!
+
+// const buyCourseBtn = document.getElementById("buyBtn");//OBS! Detta ID finns inte i nuläget!
 
 
     

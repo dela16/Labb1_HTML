@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://kit.fontawesome.com/dd0c43a00c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" async></script>
+    <script src="https://kit.fontawesome.com/dd0c43a00c.js" crossorigin="anonymous" async></script>
     <link rel="stylesheet" href="kurssida.css">
     <title>Kurssida - WestCoast Education</title>
 </head>
@@ -43,84 +43,100 @@
                             </p>
                         </div>
                         <div class="courses">
-                            <div class="grid-item" id="Internetkunskap">Vad är internet?
+                            <div class="grid-item" id="Internetkunskap">
+                                <h1>Vad är internet?</h1>
                                 <img src="imagesvideos/pexels-pixabay-147413.jpg" />
-                                Start: VT-23.
+                                <p>Start: VT-23.
                                 <br>
                                 15HP
                                 <br>
                                 1.4875SEK.
                                 <br>
+                                </p>
                                 <span class="buy" id="buyInternet" onClick="buyInternet()">Köp</span>
                             </div>
-                            <div class="grid-item" id="ProgSpråk">C#, Java, C++ och mycket mer.
+                            <div class="grid-item" id="ProgSpråk">
+                                <h1>C#, Java, C++ och mycket mer.</h1>
                                 <img src="imagesvideos/pexels-markus-spiske-2004161.jpg">
-                                Start: HT-22.
+                                <p>Start: HT-22.
                                 <br>
                                 60HP.
                                 <br>
                                 19.475SEK.
                                 <br>
+                                </p>
                                 <span class="buy" onClick="buyProgramming()">Köp</span>
                             </div>
-                            <div class="grid-item" id="AI">AI - <br> Prata med robotar.
+                            <div class="grid-item" id="AI">
+                                <h1>AI - <br> Prata med robotar.</h1>
                                 <img src="imagesvideos/pexels-alex-knight-2599244.jpg">
-                                Start: HT-22.
+                                <p>Start: HT-22.
                                 <br>
                                 15HP.
                                 <br>
                                 <br>
                                 11.250SEK.
+                                </p>
                                 <span class="buy" onClick="buyRobots()">Köp</span>
                             </div>
-                            <div class="grid-item" id="Cloud">Cloud - <br> Mer än fluffiga moln.
+                            <div class="grid-item" id="Cloud">
+                                <h1>Cloud - <br> Mer än fluffiga moln.</h1>
                                 <img src="imagesvideos/pexels-brett-sayles-2100921.jpg">
-                                Start: VT-23.
+                                <p>Start: VT-23.
                                 <br>
                                 30HP.
                                 <br>
                                 22.725SEK.
                                 <br>
+                                </p>
                                 <span class="buy" onClick="buyCloud()">Köp</span>
                             </div>
-                            <div class="grid-item" id="OfficePaketet">Office 365, grundkurs.
+                            <div class="grid-item" id="OfficePaketet">
+                                <h1>Office 365, grundkurs.</h1>
                                 <img src="imagesvideos/pexels-photo-574069.jpeg">
-                                Start: VT-23,
+                                <p>Start: VT-23,
                                 <br>
                                 7HP<br>
                                 1.475SEK.
                                 <br>
+                                </p>
                                 <span class="buy" onClick="buyOffice()">Köp</span>
                             </div>
-                            <div class="grid-item" id="Paint">Paint - <br> Din bästa vän.
+                            <div class="grid-item" id="Paint">
+                                <h1>Paint - <br> Din bästa vän.</h1>
                                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
-                                Start: HT-22.
+                                <p>Start: HT-22.
                                 <br>
                                 7HP
                                 <br>
                                 1.475SEK.
                                 <br>
+                                </p>
                                 <span class="buy" onClick="buyPaintFunction()">Köp</span>
                             </div>
-                            <div class="grid-item" id="OfficePaketet">Office 365, Advanced.
+                            <div class="grid-item" id="OfficePaketet-Advanced">
+                                <h1>Office 365, Advanced.</h1>
                                 <img src="imagesvideos/pexels-photo-574069.jpeg">
-                                Start: VT-23,
+                                <p>Start: VT-23,
                                 <br>
                                 15HP
                                 <br>
                                 12.368SEK.
                                 <br>
+                                </p>
                                 <span class="buy" onClick="buyOfficePaketet()">Köp</span>
                             </div>
-                            <div class="grid-item" id="Paint">Paint - <br> Din bästa vän, Advanced.
+                            <div class="grid-item" id="paint-Advanced">
+                                <h1>Paint - <br> Din bästa vän, Advanced.</h1>
                                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
-                                Start: HT-22.
+                                <p>Start: HT-22.
                                 <br>
                                 15HP
                                 <br>
                                 10.205SEK.
                                 <br>
-                                <span class="buy" onClick="buyPaintAdvanced()">Köp</span>
+                                </p>
+                                <span class="buy" >Köp</span>
                                 <div class="alert">
                                     <span class="fas fa-check-circle"></span>
                                     <span class="msg"> Course has been added to cart. </span>
@@ -223,8 +239,8 @@
         </div>
     </div>
     <div class="footer">All rights reserved West Coast Education.</div>
-    <script src="scripts/arrays.js"></script>
-    <script src="scripts/events.js"></script>
+    <script src="scripts/arrays.js" async></script>
+    <script src="scripts/events.js" async></script>
 </body>
 
 </html>

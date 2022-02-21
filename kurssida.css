@@ -49,6 +49,9 @@ body {
   opacity: 1;
 }
 
+h1 {
+  font-size: 1.3rem;
+}
 /* .kurser {
   background-color: rgba(0, 0, 0, 0.3); 
    position: fixed; 
@@ -181,6 +184,18 @@ body {
   border-radius: 5px;
 }
 
+#OfficePaketet-Advanced {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#OfficePaketet-Advanced img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
 #Paint {
   background-color: #dce1de58;
   font-weight: bold;
@@ -188,6 +203,18 @@ body {
 }
 
 #Paint img {
+  width: 100%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+#paint-Advanced {
+  background-color: #dce1de58;
+  font-weight: bold;
+  margin: 2%;
+}
+
+#paint-Advanced img {
   width: 100%;
   margin: 2%;
   border-radius: 5px;
@@ -375,12 +402,9 @@ body {
   line-height: 1.5rem;
 }
 
-
 #saveBtn {
   margin-top: 2rem;
 }
-
-
 
 /*Slut på admin sida.*/
 
