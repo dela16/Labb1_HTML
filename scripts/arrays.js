@@ -55,6 +55,8 @@ saveBtn.addEventListener("click", () => {
    // document.getElementById("existingCourses").innerHTML += kurs;
    
    courseList.push(kurs);
+   getCourses(); 
+   
 });
 
 

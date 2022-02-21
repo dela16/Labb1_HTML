@@ -330,13 +330,12 @@ body {
   display: flex;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
-} */
+}
 
 .admin_Modal.show {
   pointer-events: auto;
   opacity: 1;
-}
+} */
 
 .admin_Modal_Container {
   background-color: rgba(0, 0, 0, 0.3);
@@ -350,7 +349,6 @@ body {
   display: flex;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .admin_Modal_Container.show {
@@ -437,7 +435,7 @@ body {
   opacity: 1;
 }
 
-.modalContainer {
+.cart_Payed_Modal {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
@@ -452,7 +450,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.modalContainer.show {
+.cart_Payed_Modal.show {
   pointer-events: auto;
   opacity: 1;
 }

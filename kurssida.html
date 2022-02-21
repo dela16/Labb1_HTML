@@ -19,7 +19,7 @@
                 <div id="myLinks" class="topnav-Buttons">
                     <!-- <button id="openCourseModal">Kurser</button> -->
                     <button id="openAdminModal">Admin</button>
-                    <button id="openCartmodal">Logga in/ Kundvagn</button>
+                    <button id="openCartModal">Logga in/ Kundvagn</button>
                 </div>
                 <a href="javascript:void(0);" class="icon" onclick="myBurgerMenu()">
                     <i class="fa fa-bars"></i>
@@ -168,32 +168,32 @@
                         </p>
                         <ul id="existingCourses"></ul>
                     </div>
-                    <button id="courseBtn" class="newCourseBtn">Add new course</button>
+                    <button id="addNewCourseBtn" class="newCourseBtn">Add new course</button>
                     <button id="closeAdminBtn" class="closeAdminBtn"> Close</button>
-                    <div id="adminModalContainer" class="admin_Modal_Container">
-                        <div class="adminCourseModal">
-                            <form>
-                                <div id="courseNumber">
-                                    <h1>Kursnummer</h1>
-                                    <input type="text">
-                                </div>
-                                <div id="courseTitle">
-                                    <h1>Kurstitel</h1>
-                                    <input type="text">
-                                </div>
-                                <div id="courseDescription">
-                                    <h1>Kursbeskrivning</h1>
-                                    <input type="text">
-                                </div>
-                                <div id="courseLength">
-                                    <h1>Kursens längd</h1>
-                                    <input type="text">
-                                </div>
-                                <button id="saveBtn" class="save_Btn" onclick="saveCourse()">Save</button>
-                                <button id="closeAdminBtn" class="closeAdminBtn"> Close</button>
-                            </form>
+                        <div id="adminModalContainer" class="admin_Modal_Container">
+                            <div id="adminCourseModal" class="adminCourseModal">
+                                <form>
+                                    <div id="courseNumber">
+                                        <h1>Kursnummer</h1>
+                                        <input type="text">
+                                    </div>
+                                    <div id="courseTitle">
+                                        <h1>Kurstitel</h1>
+                                        <input type="text">
+                                    </div>
+                                    <div id="courseDescription">
+                                        <h1>Kursbeskrivning</h1>
+                                        <input type="text">
+                                    </div>
+                                    <div id="courseLength">
+                                        <h1>Kursens längd</h1>
+                                        <input type="text">
+                                    </div>
+                                    <button id="saveBtn" class="save_Btn" onclick="saveCourse()">Save</button>
+                                    <button id="closeAdminModalBtn" class="closeAdminBtn"> Close</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div> 
         </div>
@@ -206,10 +206,10 @@
                 <ul id="coursesInCart"></ul>
                 ewdfrhg
                 </p>
-                <button id="openBtn" class="buyBtn">Köp</button>
+                <button id="buyBtn" class="buyBtn">Köp</button>
                 <button id="closeCartBtn" class="closeCartBtn"> Close</button>
             </div>
-            <div id="modalContainer" class="modalContainer">
+            <div id="cartPayedModal" class="cart_Payed_Modal">
                 <div class="modal">
                     <h1>Courses has been payed. </h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
