@@ -38,6 +38,7 @@ function getCourses() {
       let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
       document.getElementById("existingCourses").innerHTML += wceCourses;
     };
+    
     adminDiv.classList.add("show");
 }
 
@@ -45,17 +46,11 @@ function getCourses() {
 
 closeAdminDiv.addEventListener("click", () => {
     adminDiv.classList.remove("show");
-
 });
 //ALLT OVAN FUNKAR I DEN HÄR ORDNINGEN!
 
 // const saveNewCourseBtn = document.getElementById("saveBtn");
 // const closeAdminModalBtn = document.getElementById("closeAdminModalBtn");
-
-
-// saveBtn.addEventListener("click", () => {
-//     adminModalContainer.classList.remove("show");
-// });
 
 const addNewCourseBtn = document.getElementById("addNewCourseBtn");
 const adminModalContainer = document.getElementById("adminModalContainer");

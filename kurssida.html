@@ -172,7 +172,7 @@
                     <button id="closeAdminBtn" class="closeAdminBtn"> Close</button>
                         <div id="adminModalContainer" class="admin_Modal_Container">
                             <div id="adminCourseModal" class="adminCourseModal">
-                                <form>
+                                <form onsubmit="return false">
                                     <div id="courseNumber">
                                         <h1>Kursnummer</h1>
                                         <input type="text">
@@ -189,7 +189,7 @@
                                         <h1>Kursens längd</h1>
                                         <input type="text">
                                     </div>
-                                    <button id="saveBtn" class="save_Btn" onclick="saveCourse()">Save</button>
+                                    <button id="saveBtn" class="save_Btn">Save</button>
                                     <button id="closeAdminModalBtn" class="closeAdminBtn"> Close</button>
                                 </form>
                             </div>

@@ -48,15 +48,35 @@ saveBtn.addEventListener("click", () => {
    let cNumber = document.getElementById("courseNumber").value;
    // console.log(cNumber);
    let cTitel = document.getElementById('courseTitle').value;
-   let cDecription = document.getElementById('courseDescription').value;
+   let cDescription = document.getElementById('courseDescription').value;
    let cLength = document.getElementById('courseLength').value;
    
-   const kurs = `<li>Kursnummer: ${cNumber}, Kurstitel: ${cTitel}, Kursbeskrivning: ${cDecription}, Längd: ${cLength}</li>`;
+   // const kurs = `<li>Kursnummer: ${cNumber}, Kurstitel: ${cTitel}, Kursbeskrivning: ${cDecription}, Längd: ${cLength}</li>`;
    // document.getElementById("existingCourses").innerHTML += kurs;
+   // const kurs = `{"Kursnummer": ${cNumber}", 
+   //  "Kurstitel": "${cTitel}", 
+   //  "Kursbeskrivning": "${cDescription}" , 
+   //  "Längd": "${cLength}"}` //Nu är kursen ett json objekt.
    
+   // const kurs = {
+   //    Kursnummer: cNumber,
+   //    Kurstitel: cTitel,
+   //    Kursbeskrivning: cDescription,
+   //    Längd: cLength,
+   // };
+    
+   // const nyKurs = JSON.stringify(kurs);
+const kurs = new Object();
+kurs.Kursnummer = cNumber;
+kurs.Kurstitel = cTitel;
+kurs.Kursbeskrivning = cDescription;
+kurs.Längd = cLenght;
+
+
    courseList.push(kurs);
    getCourses(); 
-   
+   adminModalContainer.classList.remove("show");
+   //Här kan du skriva in kod för att tömma rutorna. 
 });
 
 
