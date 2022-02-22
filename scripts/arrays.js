@@ -55,7 +55,7 @@ saveBtn.addEventListener("click", () => {//Här sparar och lägger vi till den n
    kurs.Kurstitel = cTitel;
    kurs.Kursbeskrivning = cDescription;
    kurs.Längd = cLength;
-
+   //Lägga till bild via url i kursform?
    courseList.push(kurs);
    getCourses(); 
    adminModalContainer.classList.remove("show");
@@ -64,7 +64,7 @@ saveBtn.addEventListener("click", () => {//Här sparar och lägger vi till den n
 });
 
 
-//Vad som krävs för att kunna skapa ett kort till presentationssidan.
+//Vad som krävs för att kunna skapa ett kort till presentationssidan. Kanske inte jätteviktigt. Funkar inte just nu. 
 function createCourseCard(cNumber, cTitel,cDescription,cLength) {
    if (cNumber == "") {
       window.alert("Add a course Number");
@@ -94,18 +94,47 @@ function createCourseCard(cNumber, cTitel,cDescription,cLength) {
 
 const cart = []; 
 
-function addCoursToCart(courseNumber) {
-   const addingCourseToCart = courses.find((el) => el.cNumber === courseNumber);//Blir detta rätt nu? Rad150. Inte samma i rad 132. 
+function addCourseToCart(courseNumber) {
+   console.log(cart);
+
+   let addingCourseToCart = courses.find((element) => element.Kursnummer === courseNumber);
+   const kundvagn = document.getElementById("coursesInCart"); 
+   kundvagn.innerHTML = `<li>${addingCourseToCart.Kurstitel} ${addingCourseToCart.Kursnummer}</li>`;
+   //Något med detta för att få kurserna till kundvagnen. Något med knappen. 
+
+
+
    
    if (cart.includes(addingCourseToCart)) {
       console.log("Course is already in cart.");
       return;
    } else {
       cart.push(addingCourseToCart);
-      console.log(`${addingCourseToCart.cTitel} added`);
-      updateCart(); 
-   }
 
+
+      updateCart();
+
+
+      //Jag tänker mig att den här ska vara med på något vis. 
+      cart.forEach((cartItem) => {
+         const liDiv = document.createElement("div");
+         liDiv.classList.add("li");
+
+         const headLine = document.createElement("h1");
+         headLine.innerText = courseItem.Kurstitel;
+
+
+         liDiv.appendChild(headLine);
+
+         cartItem.appendChild(liDiv);
+
+         console.log(`${addingCourseToCart.cTitel} added`);
+      
+      })
+
+   }
+     
+   
 }
 
 function removeCourseFromCart(cartItem) {
@@ -120,18 +149,11 @@ function removeCourseFromCart(cartItem) {
 
 
 function printAllCourseCards() {
-   // const cart = document.getElementById("coursesInCart"); 
-   // cart.innerHTML = ""; 
-
-   // if (coursesInCart.length <= 0) {
-   //    const extraCartDiv = document.createElement("div");
-   //    extraCartDiv.innerText = "Cart is empty."
-   //    cart.appendChild(extraCartDiv);
-   // };
+  
    const mainDiv = document.getElementById("courses");
    mainDiv.innerHTML = ""; 
    courseList.forEach((courseItem) => {
-      console.log(courseItem);
+      // console.log(courseItem);
       const cardDiv = document.createElement("div");
       cardDiv.classList.add("grid-item");
       
@@ -144,7 +166,7 @@ function printAllCourseCards() {
       const buySpan = document.createElement("span");
       buySpan.innerText = "Köp"; 
       buySpan.classList.add("buy");
-      buySpan.setAttribute("onClick", `addCoursToCart("${courseItem.Kursnummer}")`);
+      buySpan.setAttribute("onclick", `addCourseToCart(${courseItem.Kursnummer})`);
 
       
       cardDiv.appendChild(headLine);
@@ -159,8 +181,29 @@ function printAllCourseCards() {
 }
 
 
-
 printAllCourseCards(); 
+
+
+
+function updateCart() {//Detta är säkert fel. Kolla din addCourseToCart metod. rad 97. 
+    const cart = document.getElementById("coursesInCart"); 
+   cart.innerHTML = ""; 
+
+   if (coursesInCart.length <= 0) {
+      const extraCartDiv = document.createElement("div");
+      extraCartDiv.innerText = "Cart is empty."
+      cart.appendChild(extraCartDiv);
+   };
+
+}
+
+
+
+
+
+
+
+
 
 // 
 

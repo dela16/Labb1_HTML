@@ -31,12 +31,13 @@ openAdminModal.addEventListener("click", () => {
 
 
 function getCourses() {
-    document.getElementById("existingCourses").innerHTML = "";
+    let kurser = document.getElementById("existingCourses");
+    kurser.innerHTML = ""; 
     
    for (let i = 0; i < courseList.length; i++) {
       const course = courseList[i];
       let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-      document.getElementById("existingCourses").innerHTML += wceCourses;
+      kurser.innerHTML += wceCourses;
     };
     
     adminDiv.classList.add("show");
@@ -48,9 +49,6 @@ closeAdminDiv.addEventListener("click", () => {
     adminDiv.classList.remove("show");
 });
 //ALLT OVAN FUNKAR I DEN HÄR ORDNINGEN!
-
-// const saveNewCourseBtn = document.getElementById("saveBtn");
-// const closeAdminModalBtn = document.getElementById("closeAdminModalBtn");
 
 const addNewCourseBtn = document.getElementById("addNewCourseBtn");
 const adminModalContainer = document.getElementById("adminModalContainer");
