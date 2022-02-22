@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="kurssida.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" async></script>
-    <script src="https://kit.fontawesome.com/dd0c43a00c.js" crossorigin="anonymous" async></script>
-    <link rel="stylesheet" href="kurssida.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/dd0c43a00c.js" crossorigin="anonymous"></script>
     <title>Kurssida - WestCoast Education</title>
 </head>
 
@@ -50,7 +50,7 @@
                                 1.4875SEK.
                                 <br>
                                 </p>
-                                <span class="buy" id="buyInternet" onclick="addCourseToCart('1')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart('1')">Köp</span>
                             </div>
                             <div class="grid-item" id="ProgSpråk">
                                 <h1>C#, Java, C++ och mycket mer. (2)</h1>
@@ -62,7 +62,7 @@
                                 19.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('2')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('2')">Köp</span>
                             </div>
                             <div class="grid-item" id="AI">
                                 <h1>AI - <br> Prata med robotar. (3)</h1>
@@ -74,7 +74,7 @@
                                 <br>
                                 11.250SEK.
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('3')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('3')">Köp</span>
                             </div>
                             <div class="grid-item" id="Cloud">
                                 <h1>Cloud - <br> Mer än fluffiga moln.(4)</h1>
@@ -86,7 +86,7 @@
                                 22.725SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('4')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('4')">Köp</span>
                             </div>
                             <div class="grid-item" id="OfficePaketet">
                                 <h1>Office 365, grundkurs. (5)</h1>
@@ -97,7 +97,7 @@
                                 1.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('5')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('5')">Köp</span>
                             </div>
                             <div class="grid-item" id="Paint">
                                 <h1>Paint - <br> Din bästa vän. (6)</h1>
@@ -109,7 +109,7 @@
                                 1.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('6')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('6')">Köp</span>
                             </div>
                             <div class="grid-item" id="OfficePaketet-Advanced">
                                 <h1>Office 365, Advanced. (7)</h1>
@@ -121,7 +121,7 @@
                                 12.368SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('7')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart('7')">Köp</span>
                             </div>
                             <div class="grid-item" id="paint-Advanced">
                                 <h1>Paint - <br> Din bästa vän, Advanced. (8)</h1>
@@ -133,7 +133,7 @@
                                 10.205SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onclick="addCoursToCart('8')">Köp</span>
+                                <span class="buy" onclick="addCourseToCart ('8')">Köp</span>
                             </div>
                         </div>
                         <div class="alert">
@@ -146,21 +146,6 @@
                     </div>
                 </div>
             </div>
-            <script>
-                $('.buy').click(function () {
-                    $('.alert').addClass("show");
-                    $('.alert').removeClass("hide");
-                    $('.alert').addClass("showAlert");
-                    setTimeout(function () {
-                        $('.alert').removeClass("show");
-                        $('.alert').addClass("hide");
-                    }, 5000);
-                });
-                $('.close-btn').click(function () {
-                    $('.alert').removeClass("show");
-                    $('.alert').addClass("hide");
-                });
-            </script>
         <div id="admin" class="admin">
             <div id="adminModal" class="admin_Modal">
                 <div class="infoText">
@@ -213,7 +198,7 @@
             <div class="cart" data-state="active">
                 <h1>Din kundvagn.</h1>
                 <ul id="coursesInCart"></ul>
-                    <div>Your cart is empty.</div>
+                    <div id="emptyCartText" >Your cart is empty.</div>
                 <button id="buyBtn" class="buyBtn">Köp</button>
                 <button id="closeCartBtn" class="closeCartBtn"> Close</button>
             </div>
@@ -232,8 +217,21 @@
         </div>
     </div>
     <div class="footer">All rights reserved West Coast Education.</div>
-    <script src="scripts/arrays.js" async></script>
-    <script src="scripts/events.js" async></script>
 </body>
-
+<script src="scripts/arrays.js"></script>
+<script>
+    $('.buy').click(function () {
+        $('.alert').addClass("show");
+        $('.alert').removeClass("hide");
+        $('.alert').addClass("showAlert");
+        setTimeout(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        }, 5000);
+    });
+    $('.close-btn').click(function () {
+        $('.alert').removeClass("show");
+        $('.alert').addClass("hide");
+    });
+</script>
 </html>
