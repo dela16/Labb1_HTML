@@ -43,73 +43,126 @@ const courseList = JSON.parse(courses);
 
 const saveBtn = document.getElementById("saveBtn");
 
-saveBtn.addEventListener("click", () => {
+saveBtn.addEventListener("click", () => {//Här sparar och lägger vi till den nya kursen i listan på admin sidan. 
 
    let cNumber = document.getElementById("courseNumber").value;
-   // console.log(cNumber);
    let cTitel = document.getElementById('courseTitle').value;
    let cDescription = document.getElementById('courseDescription').value;
    let cLength = document.getElementById('courseLength').value;
    
-   // const kurs = `<li>Kursnummer: ${cNumber}, Kurstitel: ${cTitel}, Kursbeskrivning: ${cDecription}, Längd: ${cLength}</li>`;
-   // document.getElementById("existingCourses").innerHTML += kurs;
-   // const kurs = `{"Kursnummer": ${cNumber}", 
-   //  "Kurstitel": "${cTitel}", 
-   //  "Kursbeskrivning": "${cDescription}" , 
-   //  "Längd": "${cLength}"}` //Nu är kursen ett json objekt.
-    
-   // const nyKurs = JSON.stringify(kurs);
-const kurs = new Object();
-kurs.Kursnummer = cNumber;
-kurs.Kurstitel = cTitel;
-kurs.Kursbeskrivning = cDescription;
-kurs.Längd = cLength;
-
+   const kurs = new Object();
+   kurs.Kursnummer = cNumber;
+   kurs.Kurstitel = cTitel;
+   kurs.Kursbeskrivning = cDescription;
+   kurs.Längd = cLength;
 
    courseList.push(kurs);
    getCourses(); 
    adminModalContainer.classList.remove("show");
    //Här kan du skriva in kod för att tömma rutorna. Göra det till en funktion? 
-   
+   printAllCourseCards(); 
 });
 
-//Lägg till kurs på kurssidan.
 
-function courseCard(courseArray = []) {
-   courseArray = courseList; 
-   const coursesInPresentation = document.getElementById("courses");
-   coursesInPresentation.innerHTML = ""; 
-
-   courseArray.forEach((course) => {
-      const title = document.createElement("h1");
-   const pic = document.createElement("img");
-   const desc = document.createElement("p");
-   const span = document.createElement("span");
-
-      title.classList.add("card");//Fråga vad dessa göra. Är det egen js kod för att skapa kort? 
-      pic.classList.add("card-image");
-      desc.classList.add("card-text");
-      span.classList.add("card-add-button");
+//Vad som krävs för att kunna skapa ett kort till presentationssidan.
+function createCourseCard(cNumber, cTitel,cDescription,cLength) {
+   if (cNumber == "") {
+      window.alert("Add a course Number");
+      return; 
       
-      //pic.src = course.image; Denna make more sence när vi lägger till mer kod över. 
-      pic.alt = "card-image";
-      h1.innerText = course.title + `(${course.id})`;
-      p.innerText = course.desc; 
-      span.innerText = "Add Course"; 
+   }
 
-      
-         div.appendChild(h1);
-         div.appendChild(img);
-         div.appendChild(p);
-         div.appendChild(span);
-
-
-
+   let existingCourse = false; 
+   const newCourse = new kurs(cNumber, cTitel, cDescription, cLength);
+   courses.forEach((course) => {
+      if (course.cNumber == newCourse.cNumber) {
+         existingCourse = true; 
+         return; 
+      }
    });
+
+   if (existingCourse) {
+      window.alert("Must be a unique course Number.");
+      return; 
+   }
+   courseList.push(newCourse);
+   printAllCourseCards(); 
 
 }
 
-// const cart = []; 
+
+
+const cart = []; 
+
+function addCoursToCart(courseNumber) {
+   const addingCourseToCart = courses.find((el) => el.cNumber === courseNumber);//Blir detta rätt nu? Rad150. Inte samma i rad 132. 
+   
+   if (cart.includes(addingCourseToCart)) {
+      console.log("Course is already in cart.");
+      return;
+   } else {
+      cart.push(addingCourseToCart);
+      console.log(`${addingCourseToCart.cTitel} added`);
+      updateCart(); 
+   }
+
+}
+
+function removeCourseFromCart(cartItem) {
+   const cartItemToRemove = cart.find((el) => el.cNumber === cartItem);
+
+   console.log(cart.indexOf(cartItemToRemove));
+   cart.splice(cart.indexOf(cartItemToRemove), 1);
+   
+   updateCart();
+   
+}
+
+
+function printAllCourseCards() {
+   // const cart = document.getElementById("coursesInCart"); 
+   // cart.innerHTML = ""; 
+
+   // if (coursesInCart.length <= 0) {
+   //    const extraCartDiv = document.createElement("div");
+   //    extraCartDiv.innerText = "Cart is empty."
+   //    cart.appendChild(extraCartDiv);
+   // };
+   const mainDiv = document.getElementById("courses");
+   mainDiv.innerHTML = ""; 
+   courseList.forEach((courseItem) => {
+      console.log(courseItem);
+      const cardDiv = document.createElement("div");
+      cardDiv.classList.add("grid-item");
+      
+      const headLine = document.createElement("h1");
+      headLine.innerText = courseItem.Kurstitel; 
+
+      const p = document.createElement("p");
+      p.innerText = courseItem.Kursbeskrivning;
+
+      const buySpan = document.createElement("span");
+      buySpan.innerText = "Köp"; 
+      buySpan.classList.add("buy");
+      buySpan.setAttribute("onClick", `addCoursToCart("${courseItem.Kursnummer}")`);
+
+      
+      cardDiv.appendChild(headLine);
+      cardDiv.appendChild(p);
+      cardDiv.appendChild(buySpan);
+
+      mainDiv.appendChild(cardDiv);
+
+   })
+   
+
+}
+
+
+
+printAllCourseCards(); 
+
+// 
 
 // function 
  

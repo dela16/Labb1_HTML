@@ -122,9 +122,6 @@ h1 {
   text-align: center;
   width: auto;
   border-radius: 5px;
-}
-
-#Internetkunskap {
   background-color: #dce1de58;
   font-weight: bold;
   margin: 2%;
@@ -136,22 +133,10 @@ h1 {
   border-radius: 5px;
 }
 
-#ProgSpråk {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
-}
-
 #ProgSpråk img {
   width: 100%;
   margin: 2%;
   border-radius: 5px;
-}
-
-#AI {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
 }
 
 #AI img {
@@ -160,22 +145,10 @@ h1 {
   border-radius: 5px;
 }
 
-#Cloud {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
-}
-
 #Cloud img {
   width: 100%;
   margin: 2%;
   border-radius: 5px;
-}
-
-#OfficePaketet {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
 }
 
 #OfficePaketet img {
@@ -184,34 +157,16 @@ h1 {
   border-radius: 5px;
 }
 
-#OfficePaketet-Advanced {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
-}
-
 #OfficePaketet-Advanced img {
   width: 100%;
   margin: 2%;
   border-radius: 5px;
 }
 
-#Paint {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
-}
-
 #Paint img {
   width: 100%;
   margin: 2%;
   border-radius: 5px;
-}
-
-#paint-Advanced {
-  background-color: #dce1de58;
-  font-weight: bold;
-  margin: 2%;
 }
 
 #paint-Advanced img {

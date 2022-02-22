@@ -17,7 +17,6 @@
         <header>
             <div class="topnav"><a href="index.html">WestCoast Education</a>
                 <div id="myLinks" class="topnav-Buttons">
-                    <!-- <button id="openCourseModal">Kurser</button> -->
                     <button id="openAdminModal">Admin</button>
                     <button id="openCartModal">Logga in/ Kundvagn</button>
                 </div>
@@ -27,8 +26,6 @@
             </div>
         </header>
         <div id="kurser" class="kurser">
-            <!-- <div id="kursModal" class="kurs_modal">
-                <div class="modal"> -->
                     <div class="container">
                         <header>
                             <img id="cabin" src="red-g59a8ffb41_1920.jpg" />
@@ -42,9 +39,9 @@
                                 Klicka på köp när du bestämt dig för en kurs och den läggs till i din kundvagn.
                             </p>
                         </div>
-                        <div class="courses">
+                        <div id="courses" class="courses">
                             <div class="grid-item" id="Internetkunskap">
-                                <h1>Vad är internet?</h1>
+                                <h1>Vad är internet? (1)</h1>
                                 <img src="imagesvideos/pexels-pixabay-147413.jpg" />
                                 <p>Start: VT-23.
                                 <br>
@@ -53,10 +50,10 @@
                                 1.4875SEK.
                                 <br>
                                 </p>
-                                <span class="buy" id="buyInternet" onClick="buyInternet()">Köp</span>
+                                <span class="buy" id="buyInternet" onclick="addCoursToCart('1')">Köp</span>
                             </div>
                             <div class="grid-item" id="ProgSpråk">
-                                <h1>C#, Java, C++ och mycket mer.</h1>
+                                <h1>C#, Java, C++ och mycket mer. (2)</h1>
                                 <img src="imagesvideos/pexels-markus-spiske-2004161.jpg">
                                 <p>Start: HT-22.
                                 <br>
@@ -65,10 +62,10 @@
                                 19.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onClick="buyProgramming()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('2')">Köp</span>
                             </div>
                             <div class="grid-item" id="AI">
-                                <h1>AI - <br> Prata med robotar.</h1>
+                                <h1>AI - <br> Prata med robotar. (3)</h1>
                                 <img src="imagesvideos/pexels-alex-knight-2599244.jpg">
                                 <p>Start: HT-22.
                                 <br>
@@ -77,10 +74,10 @@
                                 <br>
                                 11.250SEK.
                                 </p>
-                                <span class="buy" onClick="buyRobots()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('3')">Köp</span>
                             </div>
                             <div class="grid-item" id="Cloud">
-                                <h1>Cloud - <br> Mer än fluffiga moln.</h1>
+                                <h1>Cloud - <br> Mer än fluffiga moln.(4)</h1>
                                 <img src="imagesvideos/pexels-brett-sayles-2100921.jpg">
                                 <p>Start: VT-23.
                                 <br>
@@ -89,10 +86,10 @@
                                 22.725SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onClick="buyCloud()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('4')">Köp</span>
                             </div>
                             <div class="grid-item" id="OfficePaketet">
-                                <h1>Office 365, grundkurs.</h1>
+                                <h1>Office 365, grundkurs. (5)</h1>
                                 <img src="imagesvideos/pexels-photo-574069.jpeg">
                                 <p>Start: VT-23,
                                 <br>
@@ -100,10 +97,10 @@
                                 1.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onClick="buyOffice()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('5')">Köp</span>
                             </div>
                             <div class="grid-item" id="Paint">
-                                <h1>Paint - <br> Din bästa vän.</h1>
+                                <h1>Paint - <br> Din bästa vän. (6)</h1>
                                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
                                 <p>Start: HT-22.
                                 <br>
@@ -112,10 +109,10 @@
                                 1.475SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onClick="buyPaintFunction()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('6')">Köp</span>
                             </div>
                             <div class="grid-item" id="OfficePaketet-Advanced">
-                                <h1>Office 365, Advanced.</h1>
+                                <h1>Office 365, Advanced. (7)</h1>
                                 <img src="imagesvideos/pexels-photo-574069.jpeg">
                                 <p>Start: VT-23,
                                 <br>
@@ -124,10 +121,10 @@
                                 12.368SEK.
                                 <br>
                                 </p>
-                                <span class="buy" onClick="buyOfficePaketet()">Köp</span>
+                                <span class="buy" onclick="addCoursToCart('7')">Köp</span>
                             </div>
                             <div class="grid-item" id="paint-Advanced">
-                                <h1>Paint - <br> Din bästa vän, Advanced.</h1>
+                                <h1>Paint - <br> Din bästa vän, Advanced. (8)</h1>
                                 <img src="imagesvideos/pexels-deeana-arts-1576210.jpg">
                                 <p>Start: HT-22.
                                 <br>
@@ -136,19 +133,18 @@
                                 10.205SEK.
                                 <br>
                                 </p>
-                                <span class="buy" >Köp</span>
-                                <div class="alert">
-                                    <span class="fas fa-check-circle"></span>
-                                    <span class="msg"> Course has been added to cart. </span>
-                                    <div class="close-btn">
-                                        <span class="fa fa-close"></span>
-                                    </div>
-                                </div>
+                                <span class="buy" onclick="addCoursToCart('8')">Köp</span>
+                            </div>
+                        </div>
+                        <div class="alert">
+                            <span class="fas fa-check-circle"></span>
+                            <span class="msg"> Course has been added to cart. </span>
+                            <div class="close-btn">
+                                <span class="fa fa-close"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <button id="closeCoursesBtn" class="closeCoursesBtn"> Close</button> -->
             </div>
             <script>
                 $('.buy').click(function () {
@@ -165,7 +161,6 @@
                     $('.alert').addClass("hide");
                 });
             </script>
-        </div>
         <div id="admin" class="admin">
             <div id="adminModal" class="admin_Modal">
                 <div class="infoText">
@@ -215,16 +210,14 @@
         </div>
         <div id="kundvagn" class="kundvagn">
             <div id="cartModal" class="cart_Modal"></div>
-            <div class="cart">
+            <div class="cart" data-state="active">
                 <h1>Din kundvagn.</h1>
-                <p>
-                    Kurser i din lista:
                 <ul id="coursesInCart"></ul>
-                ewdfrhg
-                </p>
+                    <div>Your cart is empty.</div>
                 <button id="buyBtn" class="buyBtn">Köp</button>
                 <button id="closeCartBtn" class="closeCartBtn"> Close</button>
             </div>
+
             <div id="cartPayedModal" class="cart_Payed_Modal">
                 <div class="modal">
                     <h1>Courses has been payed. </h1>
