@@ -20,6 +20,7 @@ function updateCart() {
     cart.appendChild(deleteBtn);
         //deleteCourseFromCart(); 
     
+    //deleteBtn.setAttribute("onclick", `deleteCouseFromCart(${courseItem.Kursnummer})`);//Something like this. courseItem kan vara fel
     
 }
 
@@ -62,25 +63,33 @@ saveBtn.addEventListener("click", () => {//Här sparar och lägger vi till den n
    //Lägga till bild via url i kursform?
    adminModalContainer.classList.remove("show")
    courseList.push(kurs);
-   getCourses(); 
-   printAllCourseCards(); 
+   showCoursesInAdminModal(); 
+   printDesignOfCourseCards(); 
 });
 
-function getCourses() {
-    console.log("Tryckte på Admin-knappen")
+function showCoursesInAdminModal() {
+    // console.log("Tryckte på Admin-knappen")
     let kurser = document.getElementById("existingCourses");
-    kurser.innerHTML = ""; 
+    kurser.innerHTML = "";
     
-   for (let i = 0; i < courseList.length; i++) {
-      const course = courseList[i];
-      let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-      kurser.innerHTML += wceCourses;
+    for (let i = 0; i < courseList.length; i++) {
+        const course = courseList[i];
+        let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
+        kurser.innerHTML += wceCourses;
     };
-    
+
+    // for (let i = 0; i < courseList.length; i++) {     Den här funkar tyyyyyp, Men sätter käppar i hjulet för den andra delete knappen
+    //     const deleteCourseBtn = document.createElement("button");
+    //     deleteCourseBtn.innerText = "Delete"
+    //     existingCourses.appendChild(deleteCourseBtn);
+    //     //deleteCourseFromCart();
+    // }
+
     adminDiv.classList.add("show");
+    
 }
 
-function printAllCourseCards() {
+function printDesignOfCourseCards() {
   
     const mainDiv = document.getElementById("courses");
     mainDiv.innerHTML = "";
@@ -106,6 +115,7 @@ function printAllCourseCards() {
         cardDiv.appendChild(buySpan);
 
         mainDiv.appendChild(cardDiv);
+
 
     })
 }
@@ -152,7 +162,7 @@ function myBurgerMenu() {
 }
 
 openAdminModal.addEventListener("click", () => {
-    getCourses(); 
+    showCoursesInAdminModal(); 
 });
 
 closeAdminDiv.addEventListener("click", () => {
