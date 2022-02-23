@@ -15,6 +15,12 @@ function updateCart() {
       cart.appendChild(extraCartDiv);
    };
 
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete"
+    cart.appendChild(deleteBtn);
+        //deleteCourseFromCart(); 
+    
+    
 }
 
 function addCourseToCart(courseNumber) {
@@ -24,11 +30,12 @@ function addCourseToCart(courseNumber) {
        if (course.Kursnummer == courseNumber) {
          courseWeWantToAdd = course
          let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-         document.getElementById("coursesInCart").innerHTML += wceCourses;
-         break
-       }
+           document.getElementById("coursesInCart").innerHTML += wceCourses;
+           break
+        }
+    
     };
-   
+
    if (cart.includes(courseWeWantToAdd)) {
       console.log("Course is already in cart.");
    } else {
@@ -75,45 +82,51 @@ function getCourses() {
 
 function printAllCourseCards() {
   
-   const mainDiv = document.getElementById("courses");
-   mainDiv.innerHTML = ""; 
-   courseList.forEach((courseItem) => {
-      // console.log(courseItem);
-      const cardDiv = document.createElement("div");
-      cardDiv.classList.add("grid-item");
+    const mainDiv = document.getElementById("courses");
+    mainDiv.innerHTML = "";
+    courseList.forEach((courseItem) => {
+        // console.log(courseItem);
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("grid-item");
       
-      const headLine = document.createElement("h1");
-      headLine.innerText = courseItem.Kurstitel; 
+        const headLine = document.createElement("h1");
+        headLine.innerText = courseItem.Kurstitel;
 
-      const p = document.createElement("p");
-      p.innerText = courseItem.Kursbeskrivning;
+        const p = document.createElement("p");
+        p.innerText = courseItem.Kursbeskrivning;
 
-      const buySpan = document.createElement("span");
-      buySpan.innerText = "Köp"; 
-      buySpan.classList.add("buy");
-      buySpan.setAttribute("onclick", `addCourseToCart(${courseItem.Kursnummer})`);
+        const buySpan = document.createElement("span");
+        buySpan.innerText = "Köp";
+        buySpan.classList.add("buy");//Denna borde göra så att min pop-up syns...
+        buySpan.setAttribute("onclick", `addCourseToCart(${courseItem.Kursnummer})`);
 
       
-      cardDiv.appendChild(headLine);
-      cardDiv.appendChild(p);
-      cardDiv.appendChild(buySpan);
+        cardDiv.appendChild(headLine);
+        cardDiv.appendChild(p);
+        cardDiv.appendChild(buySpan);
 
-      mainDiv.appendChild(cardDiv);
+        mainDiv.appendChild(cardDiv);
 
-   })
+    })
+}
 
-function removeCourseFromCart(cartItem) {
-   const cartItemToRemove = cart.find((el) => el.cNumber === cartItem);
 
-   console.log(cart.indexOf(cartItemToRemove));
-   cart.splice(cart.indexOf(cartItemToRemove), 1);
-   
+
+function deleteCourseFromCart(cartItem) {
+    for (let i = 0; i < cart.length; i++) {
+        const courseToDelete = cart[i];
+        if (courseToDelete.Kursnummer == courseNumber) {
+            courseWeWantToDelete = courseToDelete//Tveksam på denna. Jämför med addCourse behöver du ha med samma rader? 
+            let wceCourseToDelete = `<li>Kursnummer: ${courseToDelete.Kursnummer}, Kurstitel: ${courseToDelete.Kurstitel}, Kursbeskrivning: ${courseToDelete.Kursbeskrivning}, Längd: ${courseToDelete.Längd}</li>`;
+            document.getElementById("coursesInCart").innerHTML -= wceCourseToDelete;
+            break
+        }
+    }; 
    updateCart();
    
 }
 
 
-}
 
 
 const addNewCourseBtn = document.getElementById("addNewCourseBtn");
