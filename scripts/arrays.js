@@ -15,14 +15,21 @@ function updateCart() {
       cart.appendChild(extraCartDiv);
    };
 
+    // cart.forEach((cartItem) => {
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete"
     cart.appendChild(deleteBtn);
-        //deleteCourseFromCart(); 
-    
-    //deleteBtn.setAttribute("onclick", `deleteCouseFromCart(${courseItem.Kursnummer})`);//Something like this. courseItem kan vara fel
-    
+
+    // for (var i = 0; i < deleteBtn.length; i++){ Svårt att veta vad som ska in vart. 
+    //     var deleteCourseBtn = deleteBtn[i]
+        deleteBtn.addEventListener("click", deleteCourseFromCart()
+        // var buttonClicked = event.target;
+        // buttonClicked.parentElement.parentElement.remove(); 
+        
+    );
 }
+
+
 
 function addCourseToCart(courseNumber) {
    let courseWeWantToAdd = ""
@@ -66,6 +73,8 @@ saveBtn.addEventListener("click", () => {//Här sparar och lägger vi till den n
    showCoursesInAdminModal(); 
    printDesignOfCourseCards(); 
 });
+
+
 
 function showCoursesInAdminModal() {
     // console.log("Tryckte på Admin-knappen")
@@ -122,19 +131,48 @@ function printDesignOfCourseCards() {
 
 
 
-function deleteCourseFromCart(cartItem) {
-    for (let i = 0; i < cart.length; i++) {
-        const courseToDelete = cart[i];
-        if (courseToDelete.Kursnummer == courseNumber) {
-            courseWeWantToDelete = courseToDelete//Tveksam på denna. Jämför med addCourse behöver du ha med samma rader? 
-            let wceCourseToDelete = `<li>Kursnummer: ${courseToDelete.Kursnummer}, Kurstitel: ${courseToDelete.Kurstitel}, Kursbeskrivning: ${courseToDelete.Kursbeskrivning}, Längd: ${courseToDelete.Längd}</li>`;
-            document.getElementById("coursesInCart").innerHTML -= wceCourseToDelete;
-            break
+function deleteCourseFromCart(kursAttRadera) {
+    
+//Variant 1.
+    console.log("It works");
+    for (let i = 0; i < cart.length; i += 1) {
+        //const courseToDelete = cart[i];
+        if (cart[i].Kursnummer === courses) {
+            cart.splice(i, 1); 
+            return; 
+            // courseWeWantToDelete = courseToDelete//Tveksam på denna. Jämför med addCourse behöver du ha med samma rader? 
+            // let wceCourseToDelete = `<li>Kursnummer: ${courseToDelete.Kursnummer}, Kurstitel: ${courseToDelete.Kurstitel}, Kursbeskrivning: ${courseToDelete.Kursbeskrivning}, Längd: ${courseToDelete.Längd}</li>`;
+            // document.getElementById("coursesInCart").innerHTML -= wceCourseToDelete;
+            // break
         }
     }; 
-   updateCart();
    
-}
+    
+    //Variant 2
+    // for (let i = 0; i < cart.length; i++) {
+    //   const course = cart[i];
+    //    if (course.Kursnummer == courseNumber) {
+    //      courseWeWantToDelete = course
+    //      let wceCoursesToDelete = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
+    //        document.getElementById("coursesInCart").innerHTML -= wceCoursesToDelete;
+    //        break
+    //     }
+    
+    // };
+    
+
+    //Variant 3
+       
+//    const kursAttRadera = new Object();
+//    kursAttRadera.Kursnummer = cNumber;
+//    kursAttRadera.Kurstitel = cTitel;
+//    kursAttRadera.Kursbeskrivning = cDescription;
+//    kursAttRadera.Längd = cLength;
+
+//    cart.pop(kursAttRadera); //pop ska det inte vara men temporärt
+//     updateCart(); 
+    
+} 
 
 
 
