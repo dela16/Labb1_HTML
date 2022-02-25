@@ -8,39 +8,10 @@ const cart = [];
 const emptyCartText = document.getElementById("emptyCartText");
 
 function deleteCourseFromCart() {
-  //Variant 1.
   for (let i = 0; i < cart.length; i += 1) {
-    //const courseToDelete = cart[i];
     deleteBtn.onclick = function () {};
-    // courseWeWantToDelete = courseToDelete//Tveksam på denna. Jämför med addCourse behöver du ha med samma rader?
-    // let wceCourseToDelete = `<li>Kursnummer: ${courseToDelete.Kursnummer}, Kurstitel: ${courseToDelete.Kurstitel}, Kursbeskrivning: ${courseToDelete.Kursbeskrivning}, Längd: ${courseToDelete.Längd}</li>`;
-    // document.getElementById("coursesInCart").innerHTML -= wceCourseToDelete;
-    // break
   }
 }
-
-//Variant 2
-// for (let i = 0; i < cart.length; i++) {
-//   const course = cart[i];
-//    if (course.Kursnummer == courseNumber) {
-//      courseWeWantToDelete = course
-//      let wceCoursesToDelete = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
-//        document.getElementById("coursesInCart").innerHTML -= wceCoursesToDelete;
-//        break
-//     }
-
-// };
-
-//Variant 3
-
-//    const kursAttRadera = new Object();
-//    kursAttRadera.Kursnummer = cNumber;
-//    kursAttRadera.Kurstitel = cTitel;
-//    kursAttRadera.Kursbeskrivning = cDescription;
-//    kursAttRadera.Längd = cLength;
-
-//    cart.pop(kursAttRadera); //pop ska det inte vara men temporärt
-//     updateCart();
 
 function updateCart() {
   console.log(cart);
@@ -67,11 +38,6 @@ function updateCart() {
     deleteBtn.innerText = "Delete";
     courseItem.appendChild(deleteBtn);
   }
-
-  // cart.forEach((cartItem) => {
-
-  // for (var i = 0; i < deleteBtn.length; i++){ Svårt att veta vad som ska in vart.
-  //     var deleteCourseBtn = deleteBtn[i]
 }
 
 function addCourseToCart(courseNumber) {
@@ -81,7 +47,7 @@ function addCourseToCart(courseNumber) {
 }
 
 saveBtn.addEventListener("click", () => {
-  //Här sparar och lägger vi till den nya kursen i listan på admin sidan.
+  //Här sparar och lägger vi till den nya kursen i listan i admin modalen.
 
   let cNumber = document.getElementById("courseNumber").value;
   let cTitel = document.getElementById("courseTitle").value;
@@ -101,7 +67,7 @@ saveBtn.addEventListener("click", () => {
 });
 
 function showCoursesInAdminModal() {
-  // console.log("Tryckte på Admin-knappen")
+  //Den kursen vi la till i save-funktionen visas tack vare den här funktionen.
   let kurser = document.getElementById("existingCourses");
   kurser.innerHTML = "";
 
@@ -110,13 +76,6 @@ function showCoursesInAdminModal() {
     let wceCourses = `<li>Kursnummer: ${course.Kursnummer}, Kurstitel: ${course.Kurstitel}, Kursbeskrivning: ${course.Kursbeskrivning}, Längd: ${course.Längd}</li>`;
     kurser.innerHTML += wceCourses;
   }
-
-  // for (let i = 0; i < courseList.length; i++) {     Den här funkar tyyyyyp, Men sätter käppar i hjulet för den andra delete knappen
-  //     const deleteCourseBtn = document.createElement("button");
-  //     deleteCourseBtn.innerText = "Delete"
-  //     existingCourses.appendChild(deleteCourseBtn);
-  //     //deleteCourseFromCart();
-  // }
 
   adminDiv.classList.add("show");
 }

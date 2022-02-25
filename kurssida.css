@@ -52,41 +52,6 @@ body {
 h1 {
   font-size: 1.3rem;
 }
-/* .kurser {
-  background-color: rgba(0, 0, 0, 0.3); 
-   position: fixed; 
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-} */
-
-/* .kurser.show {
-  pointer-events: auto;
-  opacity: 1;
-} */
-
-/* Kurssida */
-
-/* .kurs_Modal {
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-} */
 
 #cabin {
   width: 50%;
@@ -193,7 +158,7 @@ h1 {
   background-color: #158467;
   padding: 1rem;
   position: fixed;
-  width: 25%;
+  width: 30%;
   right: 0;
   top: 1rem;
   border-radius: 4%;
@@ -249,12 +214,10 @@ h1 {
 .alert .fas {
   /*Check*/
   position: absolute;
-  left: 2rem;
   top: 50%;
   transform: translateY(-50%);
   color: #baffb4;
   font-size: 2rem;
-  /* transform: translateY(50%); */
 }
 
 .alert .close-btn {
