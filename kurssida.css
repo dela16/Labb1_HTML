@@ -435,6 +435,11 @@ h1 {
     padding: 2rem;
   }
 
+  .topnav-Buttons {
+    display: none;
+    position: absolute;
+  }
+
   #myLinks a {
     text-decoration: none;
     color: white;
