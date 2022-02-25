@@ -77,7 +77,7 @@ body {
 
 @media (min-width: 375px) and (max-width: 562px) {
   .container {
-    width: 100%;
+    width: auto;
   }
 
   .video {
