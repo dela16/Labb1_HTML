@@ -1,16 +1,27 @@
 const courses = `[{"Kursnummer":"1","Kurstitel":"Vad är internet?","Kursbeskrivning":"lorem ipsum","Längd":"10 veckor."}, {"Kursnummer":"2","Kurstitel":"C#, Java, C++ och mycket mer","Kursbeskrivning":"lorem ipsum","Längd":"40 veckor."},{"Kursnummer":"3","Kurstitel":"AI - Prata med robotar.","Kursbeskrivning":"lorem ipsum","Längd":"10 veckor."},{"Kursnummer":"4","Kurstitel":"Cloud - Mer än fluffiga moln.","Kursbeskrivning":"lorem ipsum","Längd":"25 veckor."},{"Kursnummer":"5","Kurstitel":"Office 365, grundkurs.","Kursbeskrivning":"lorem ipsum","Längd":"5 veckor."},{"Kursnummer":"6","Kurstitel":"Paint - Din bästa vän.","Kursbeskrivning":"lorem ipsum","Längd":"5 veckor."},{"Kursnummer":"7","Kurstitel":"Office 365, Advanced.","Kursbeskrivning":"lorem ipsum","Längd":"10 veckor."},{"Kursnummer":"8","Kurstitel":"Paint - Din bästa vän, Advanced","Kursbeskrivning":"lorem ipsum","Längd":"10 veckor."}]`;
 const courseList = JSON.parse(courses);
 
+const addNewCourseBtn = document.getElementById("addNewCourseBtn");
+const adminModalContainer = document.getElementById("adminModalContainer");
+const closeAdminModalBtn = document.getElementById("closeAdminModalBtn");
+const openCartModal = document.getElementById("openCartModal");
+const kundvagnDiv = document.getElementById("kundvagn");
+const closeCartBtn = document.getElementById("closeCartBtn");
+const buyBtn = document.getElementById("buyBtn");
+const cartPayedModal = document.getElementById("cartPayedModal");
+const closeBtn = document.getElementById("closeBtn");
+const openAdminModal = document.getElementById("openAdminModal");
+const adminDiv = document.getElementById("admin");
+const closeAdminDiv = document.getElementById("closeAdminBtn");
+
 const saveBtn = document.getElementById("saveBtn");
 
-const cart = [];
+let cart = [];
 
 const emptyCartText = document.getElementById("emptyCartText");
 
 function deleteCourseFromCart() {
-  for (let i = 0; i < cart.length; i += 1) {
-    deleteBtn.onclick = function () {};
-  }
+  cart = [];
 }
 
 function updateCart() {
@@ -41,30 +52,17 @@ function updateCart() {
 }
 
 function addCourseToCart(courseNumber) {
-  cart.push(courseList[courseNumber]);
+  console.log(cart);
+  for (let i = 0; i < courseList.length; i++) {
+    const tempCourse = courseList[i];
+    if (tempCourse.Kursnummer == courseNumber) {
+      cart.push(tempCourse);
+    }
+  }
+  console.log(cart);
   emptyCartText.style.display = "none";
   updateCart();
 }
-
-saveBtn.addEventListener("click", () => {
-  //Här sparar och lägger vi till den nya kursen i listan i admin modalen.
-
-  let cNumber = document.getElementById("courseNumber").value;
-  let cTitel = document.getElementById("courseTitle").value;
-  let cDescription = document.getElementById("courseDescription").value;
-  let cLength = document.getElementById("courseLength").value;
-
-  const kurs = new Object();
-  kurs.Kursnummer = cNumber;
-  kurs.Kurstitel = cTitel;
-  kurs.Kursbeskrivning = cDescription;
-  kurs.Längd = cLength;
-  adminModalContainer.classList.remove("show");
-  courseList.push(kurs);
-  showCoursesInAdminModal();
-  printDesignOfCourseCards();
-});
-
 function showCoursesInAdminModal() {
   //Den kursen vi la till i save-funktionen visas tack vare den här funktionen.
   let kurser = document.getElementById("existingCourses");
@@ -109,18 +107,26 @@ function printDesignOfCourseCards() {
   });
 }
 
-const addNewCourseBtn = document.getElementById("addNewCourseBtn");
-const adminModalContainer = document.getElementById("adminModalContainer");
-const closeAdminModalBtn = document.getElementById("closeAdminModalBtn");
-const openCartModal = document.getElementById("openCartModal");
-const kundvagnDiv = document.getElementById("kundvagn");
-const closeCartBtn = document.getElementById("closeCartBtn");
-const buyBtn = document.getElementById("buyBtn");
-const cartPayedModal = document.getElementById("cartPayedModal");
-const closeBtn = document.getElementById("closeBtn");
-const openAdminModal = document.getElementById("openAdminModal");
-const adminDiv = document.getElementById("admin");
-const closeAdminDiv = document.getElementById("closeAdminBtn");
+saveBtn.addEventListener("click", () => {
+  //Här sparar och lägger vi till den nya kursen i listan i admin modalen.
+
+  let cNumber = document.getElementById("courseNumber").value;
+  let cTitel = document.getElementById("courseTitle").value;
+  let cDescription = document.getElementById("courseDescription").value;
+  let cLength = document.getElementById("courseLength").value;
+
+  const kurs = new Object();
+  kurs.Kursnummer = cNumber;
+  kurs.Kurstitel = cTitel;
+  kurs.Kursbeskrivning = cDescription;
+  kurs.Längd = cLength;
+  adminModalContainer.classList.remove("show");
+  console.log(kurs);
+  courseList.push(kurs);
+  console.log(courseList);
+  showCoursesInAdminModal();
+  printDesignOfCourseCards();
+});
 
 function myBurgerMenu() {
   var x = document.getElementById("myLinks");
@@ -160,5 +166,6 @@ buyBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   cartPayedModal.classList.remove("show");
+  deleteCourseFromCart();
   coursesInCart.innerHTML = "Thank you, come again.";
 });
