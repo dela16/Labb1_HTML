@@ -26,6 +26,9 @@ body {
   text-decoration: none;
 }
 
+.topnav .icon {
+  display: none;
+}
 .topnav a:hover {
   background-color: #8ad4d4;
   cursor: pointer;
@@ -46,6 +49,20 @@ body {
   border-radius: 5%;
   pointer-events: auto;
   opacity: 1;
+  /*position: absolute; Denna gör att jag bara visar ena*/
+}
+
+.topnav-Buttons button #openAdminModal {
+  width: 15rem;
+  height: 2rem;
+  font-size: large;
+  border: none;
+  background-color: #052c3c;
+  color: white;
+  border-radius: 5%;
+  pointer-events: auto;
+  opacity: 1;
+  display: block;
 }
 
 h1 {
@@ -399,7 +416,7 @@ h1 {
   background-color: #467579;
   height: 2em;
   text-align: center;
-  position: absolute;
+  position: static;
   padding-top: 15px;
 }
 
@@ -452,6 +469,7 @@ h1 {
     background-color: #01161e;
     color: white;
   }
+
   .infoText {
     width: 70%;
     margin-left: 10%;
@@ -480,16 +498,34 @@ h1 {
     grid-template-columns: 50% 50%;
     background-color: #477a79;
   }
+
+  .admin_Modal {
+    max-height: 98vh;
+    width: 90%;
+    height: auto;
+    overflow: scroll;
+  }
+
+  .infoText {
+    overflow-y: initial;
+  }
+
+  .adminCourseModal {
+    width: 80%;
+  }
+
+  .cart {
+    width: 80%;
+    height: auto;
+    overflow: scroll;
+  }
 }
 
 @media (max-width: 768px) {
-
 }
 
 @media (min-width: 769px) and (max-width: 998) {
-
 }
 
 @media (min-width: 999) {
-
 }
