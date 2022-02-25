@@ -29,6 +29,7 @@ body {
 .topnav .icon {
   display: none;
 }
+
 .topnav a:hover {
   background-color: #8ad4d4;
   cursor: pointer;
