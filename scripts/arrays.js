@@ -59,7 +59,6 @@ saveBtn.addEventListener("click", () => {
   kurs.Kurstitel = cTitel;
   kurs.Kursbeskrivning = cDescription;
   kurs.Längd = cLength;
-  //Lägga till bild via url i kursform?
   adminModalContainer.classList.remove("show");
   courseList.push(kurs);
   showCoursesInAdminModal();

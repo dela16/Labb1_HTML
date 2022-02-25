@@ -21,7 +21,6 @@ body {
   font-size: 1em;
   font-weight: bold;
   color: black;
-  border-radius: 3%;
   padding: 1rem;
   margin-right: 1rem;
   text-decoration: none;
@@ -263,25 +262,6 @@ h1 {
   opacity: 1;
 }
 
-/* .admin_Modal {
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.admin_Modal.show {
-  pointer-events: auto;
-  opacity: 1;
-} */
-
 .admin_Modal_Container {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -428,9 +408,6 @@ h1 {
     width: 100%;
   }
 
-  .video {
-    display: none;
-  }
   .topnav {
     width: auto;
     height: 0;
@@ -506,10 +483,13 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
 }
 
 @media (min-width: 769px) and (max-width: 998) {
+
 }
 
 @media (min-width: 999) {
+
 }
