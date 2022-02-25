@@ -95,7 +95,7 @@ function printDesignOfCourseCards() {
 
     const buySpan = document.createElement("span");
     buySpan.innerText = "Köp";
-    buySpan.classList.add("buy"); //Denna borde göra så att min pop-up syns...
+    buySpan.classList.add("buy");
     buySpan.setAttribute(
       "onclick",
       `addCourseToCart(${courseItem.Kursnummer})`
@@ -160,4 +160,5 @@ buyBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   cartPayedModal.classList.remove("show");
+  coursesInCart.innerHTML = "Thank you, come again.";
 });

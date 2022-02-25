@@ -421,6 +421,9 @@ h1 {
 }
 
 @media (min-width: 375px) and (max-width: 562px) {
+  body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
   .container {
     width: 100%;
   }
@@ -499,6 +502,9 @@ h1 {
     background-color: #477a79;
   }
 
+  .alert {
+    width: 90%;
+  }
   .admin_Modal {
     max-height: 98vh;
     width: 90%;
@@ -518,6 +524,10 @@ h1 {
     width: 80%;
     height: auto;
     overflow: scroll;
+  }
+
+  .buyBtn {
+    width: auto;
   }
 }
 
